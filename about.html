@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Our Atelier | Heritage, Craftsmanship & Ethics | AURELIA</title>
+  <meta name="description" content="Discover the heritage of Maison Aurelia. Thirty years of Valenza gold-forging, Swiss laser precision, 100% recycled precious metals, and private Geneva salons." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Tailwind CSS 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            champagne: '#C6A15B',
+            charcoal: '#191816',
+            ivory: '#FAF7F0',
+            silver: '#C8CCD0',
+            beige: '#E8DFD0'
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS Library CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased transition-colors duration-400">
+
+  <!-- GLOBAL HEADER (Hydrated by app.js) -->
+  <div id="aurelia-header"></div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: HERO / ATELIER ORIGINS & HERITAGE
+         ========================================================================= -->
+    <section id="about-hero" class="relative min-h-[80vh] flex items-center overflow-hidden bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-400 pt-28 pb-16">
+      <!-- Atmospheric Architectural Background -->
+      <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <img
+          src="images/hero-atelier-bg.jpg"
+          alt="Aurelia Haute Joaillerie Salon"
+          class="w-full h-full object-cover object-center scale-105 opacity-20 dark:opacity-10 transition-opacity duration-700 select-none filter blur-[0.5px]"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/85 to-[var(--bg-primary)]/40 rtl:bg-gradient-to-l"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)]/60"></div>
+        <div class="hero-caustic-light w-[600px] h-[600px] top-1/4 right-1/4 opacity-35"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="max-w-3xl space-y-6 text-left rtl:text-right" data-aos="fade-up" data-aos-duration="1000">
+          <div class="inline-flex items-center gap-2 px-3 py-1 border border-[#C6A15B]/30 bg-[#C6A15B]/10 rounded-full text-[11px] uppercase tracking-[0.25em] text-[var(--color-gold)] font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#C6A15B] animate-ping"></span>
+            Maison Aurelia • Founded 1994
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight text-[var(--text-primary)]">
+            A Legacy of Light, <br />
+            <span class="text-gold-gradient italic font-normal">Forged for Eternity.</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-[var(--text-secondary)] font-light leading-relaxed max-w-2xl">
+            For three decades, Maison Aurelia has preserved the poetic intimacy of fine neckpieces. Uniting ancient Valenza goldsmithing with Swiss laser precision, we craft heirloom jewelry intended not merely to adorn, but to accompany a life of significance.
+          </p>
+
+          <div class="pt-4 flex flex-wrap items-center gap-8 text-xs uppercase tracking-widest text-[var(--text-muted)] font-medium border-t border-[var(--border-subtle)] max-w-xl">
+            <div><strong class="font-serif text-2xl font-bold text-[var(--color-gold)] block">30+</strong> Years of Craft</div>
+            <div><strong class="font-serif text-2xl font-bold text-[var(--color-gold)] block">Geneva</strong> Master Vault</div>
+            <div><strong class="font-serif text-2xl font-bold text-[var(--color-gold)] block">100%</strong> Certified Recycled</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: MASTER CRAFTSMANSHIP & ATELIER ARTISTRY
+         ========================================================================= -->
+    <section id="about-craftsmanship" class="py-24 bg-[var(--bg-secondary)] border-y border-[var(--border-color)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left: Goldsmith Imagery Stage with 3D Depth -->
+          <div class="lg:col-span-6 relative" data-aos="fade-right">
+            <div class="relative overflow-hidden border border-[var(--border-color)] shadow-2xl bg-[var(--bg-surface)]">
+              <img
+                src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1100&q=80"
+                alt="Master Goldsmith Hand Polishing in Aurelia Geneva Workshop"
+                class="w-full h-[480px] object-cover object-center"
+              />
+              <div class="absolute bottom-5 left-5 right-5 sm:right-auto sm:max-w-sm bg-[var(--bg-surface)]/95 backdrop-blur-md border border-[var(--border-color)] p-5 space-y-1 text-left rtl:text-right">
+                <span class="text-[10px] uppercase tracking-widest text-[var(--color-gold)] font-bold">The Valenza-Geneva Bench</span>
+                <h4 class="font-serif text-base font-bold text-[var(--text-primary)]">32 Hours of Manual Calibration</h4>
+                <p class="text-xs text-[var(--text-secondary)] leading-relaxed font-light">
+                  Every link is individually micro-welded under microscope inspection to ensure seamless skin drape with zero hair-pulling.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Detailed Craft Narrative -->
+          <div class="lg:col-span-6 space-y-6 text-left rtl:text-right" data-aos="fade-left">
+            <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">The Art of the Goldsmith</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+              Where Precision Meets <br />
+              <span class="italic font-normal">Pure Passion.</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+              Unlike mass-manufactured chains stamped from hollow foil, every Aurelia piece begins as solid precious ingot. Our proprietary 18K Champagne Gold alloy infuses classical yellow gold with a subtle whisper of palladium—yielding a luminous warmth that compliments every skin undertone.
+            </p>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+              In sterling silver, we apply an electro-plated rhodium barrier seven times denser than commercial fashion standards, preserving an enduring mirror sheen impervious to atmospheric oxidation.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 bg-[var(--bg-surface)] border border-[var(--border-subtle)] space-y-1.5">
+                <div class="text-xs font-bold uppercase tracking-wider text-[var(--color-gold)]">Solid Core Castings</div>
+                <p class="text-[11px] text-[var(--text-secondary)]">Zero hollow links. Every strand possesses satisfying heft and structural integrity.</p>
+              </div>
+              <div class="p-4 bg-[var(--bg-surface)] border border-[var(--border-subtle)] space-y-1.5">
+                <div class="text-xs font-bold uppercase tracking-wider text-[var(--color-silver)]">Microscopic Claw Sets</div>
+                <p class="text-[11px] text-[var(--text-secondary)]">Diamonds set under 40x magnification for immaculate light pass-through.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: ETHICAL PILLARS & SUSTAINABILITY MANIFESTO
+         ========================================================================= -->
+    <section id="about-sustainability" class="py-24 bg-[var(--bg-primary)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Our Conscious Promise</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[var(--text-primary)]">
+            Ethical Sourcing & Ecology
+          </h2>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)] font-light leading-relaxed">
+            True luxury must never compromise conscience. Our atelier operates on strict zero-conflict and circular metallurgy guidelines.
+          </p>
+        </div>
+
+        <!-- 4 Pillars Grid (2x2 on tablet with centered 3rd/4th balance) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-4" data-aos="fade-up">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">100% Recycled Gold</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed font-light">
+              Refined exclusively from audited post-consumer precious metals, eliminating the environmental scarring of open-pit mining.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">Conflict-Free Stones</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed font-light">
+              Every brilliant diamond is certified VVS1 clarity, sourced through Kimberley Process compliance and premier zero-carbon solar labs.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">Cultured Keshi Pearls</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed font-light">
+              Harvested from protected Australian marine sanctuaries supporting coral reef biodiversity and artisanal coastal communities.
+            </p>
+          </div>
+
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">Swiss Assay Hallmarking</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed font-light">
+              Independently stamped by the Geneva Central Office for Precious Metal Control, certifying exact 750 (18K) and 925 purities.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: PRIVATE SALON EXPERIENCE & BESPOKE INVITATION
+         ========================================================================= -->
+    <section id="about-salon-experience" class="py-24 bg-[var(--bg-secondary)] border-t border-[var(--border-color)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        
+        <div class="relative overflow-hidden bg-[var(--bg-surface)] border border-[var(--border-color)] p-8 sm:p-14 lg:p-16 shadow-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-left rtl:text-right" data-aos="fade-right">
+              <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Private Atelier Consultation</span>
+              <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+                Experience Aurelia in Person <br />
+                <span class="italic font-normal">or Forge in 3D.</span>
+              </h2>
+              <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+                Whether you visit our private salon overlooking Lake Geneva or collaborate with our master jewelers remotely through our real-time 3D Custom Studio, every consultation is guided with bespoke discretion.
+              </p>
+              
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                <a href="custom-studio.html" class="px-8 py-4 btn-luxury-gold text-xs font-bold uppercase tracking-[0.2em] text-center">
+                  Launch 3D Custom Studio
+                </a>
+                <a href="shop.html" class="px-8 py-4 btn-luxury-ghost text-xs font-bold uppercase tracking-[0.2em] text-center">
+                  Explore Curated Catalog
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 space-y-4 border-t lg:border-t-0 lg:border-l border-[var(--border-subtle)] pt-6 lg:pt-0 lg:pl-10 rtl:lg:pl-0 rtl:lg:pr-10" data-aos="fade-left">
+              <div class="text-xs uppercase tracking-widest text-[var(--color-gold)] font-bold">Geneva Flagship Salon</div>
+              <div class="text-xs text-[var(--text-secondary)] space-y-1">
+                <p class="font-serif text-base font-bold text-[var(--text-primary)]">Maison Aurelia Joaillerie</p>
+                <p>Rue du Rhône 42, 1204 Genève, Switzerland</p>
+                <p>Private Salon Appointments: Mon — Sat, 10:00 — 18:30</p>
+                <p class="pt-2 text-[var(--color-gold)] font-semibold">concierge@aureliajewels.com</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Shared Global Footer -->
+    <div id="aurelia-footer"></div>
+  </main>
+
+  <!-- Interactive Overlays (Search, Cart, Wishlist, QuickView, Checkout) -->
+  <div id="aurelia-interactive-overlays"></div>
+
+  <!-- AOS CDN Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Data & Application Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

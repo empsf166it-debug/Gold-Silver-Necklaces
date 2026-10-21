@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Necklace Details | Haute Joaillerie Masterpiece | AURELIA</title>
+  <meta name="description" content="Explore master specifications, high-resolution multi-angle photography, precious metal certifications, and care guidance for this Aurelia fine necklace." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Tailwind CSS 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            champagne: '#C6A15B',
+            charcoal: '#191816',
+            ivory: '#FAF7F0',
+            silver: '#C8CCD0',
+            beige: '#E8DFD0'
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS Library CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased transition-colors duration-400">
+
+  <!-- GLOBAL HEADER (Hydrated by app.js) -->
+  <div id="aurelia-header"></div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: INTERACTIVE PRODUCT SHOWCASE (3D Stage, Gallery, Loupe Zoom)
+         ========================================================================= -->
+    <section id="product-showcase-stage" class="py-12 bg-[var(--bg-primary)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Breadcrumb -->
+        <nav class="flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-[var(--color-gold)] mb-8 rtl:space-x-reverse font-medium">
+          <a href="index.html" class="hover:underline">Home</a>
+          <span>/</span>
+          <a href="shop.html" class="hover:underline">Necklaces</a>
+          <span>/</span>
+          <span id="breadcrumb-product-name" class="text-[var(--text-secondary)]">Masterpiece</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Left: Gallery & Zoom Stage (Spans 7 cols) -->
+          <div class="lg:col-span-7 flex flex-col-reverse sm:flex-row gap-5 perspective-container" data-aos="fade-right">
+            
+            <!-- Thumbnails Column -->
+            <div id="product-thumbnails-col" class="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-visible pb-2 sm:pb-0 sm:w-24 flex-shrink-0">
+              <!-- Dynamically populated thumbnails -->
+            </div>
+
+            <!-- Primary 3D Stage with Hover Zoom Loupe -->
+            <div class="flex-1 relative bg-[var(--bg-secondary)] border border-[var(--border-color)] overflow-hidden tilt-card shadow-lg group">
+              
+              <div id="zoom-stage-container" class="zoom-container relative w-full aspect-[4/5] flex items-center justify-center bg-black/5 dark:bg-black/40">
+                <img
+                  id="main-product-image"
+                  src="images/aurelia-solitaire-gold.jpg"
+                  alt="Fine Necklace Detail View"
+                  class="zoom-image w-full h-full object-cover object-center transition-transform duration-300"
+                />
+
+                <!-- Floating Metal Karat Pill -->
+                <div class="absolute top-4 left-4 z-10 bg-[var(--bg-surface)]/90 backdrop-blur-md border border-[var(--border-color)] px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-[var(--color-gold)]">
+                  <span id="product-hallmark-badge">18K Solid Gold</span>
+                </div>
+
+                <!-- 3D Perspective Indicator -->
+                <div class="absolute bottom-4 right-4 z-10 bg-black/75 backdrop-blur-sm text-white px-3 py-1 rounded text-[10px] uppercase tracking-wider flex items-center gap-1.5 opacity-75 group-hover:opacity-100 transition-opacity">
+                  <svg class="w-3.5 h-3.5 text-[#ECC880]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                  <span>Hover to Magnify</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Product Specifications, Purchasing & Variant Config (Spans 5 cols) -->
+          <div class="lg:col-span-5 space-y-6 text-left rtl:text-right" data-aos="fade-left">
+            <div>
+              <div id="product-subtitle-el" class="text-xs uppercase tracking-[0.25em] text-[var(--color-gold)] font-bold">
+                Haute Joaillerie Atelier
+              </div>
+              <h1 id="product-title-el" class="font-serif text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mt-1.5 leading-tight">
+                The Aurelia Solitaire Diamond Necklace
+              </h1>
+            </div>
+
+            <!-- Price & Availability -->
+            <div class="flex items-center gap-4 py-3 border-y border-[var(--border-subtle)]">
+              <div>
+                <span id="product-price-el" class="font-serif text-3xl font-bold text-[var(--text-primary)]">$1,850</span>
+                <span id="product-orig-price-el" class="text-sm line-through text-[var(--text-muted)] ml-2">$2,150</span>
+              </div>
+              <span id="product-stock-badge" class="px-2.5 py-1 text-xs rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-semibold">
+                In Stock (Geneva Vault)
+              </span>
+            </div>
+
+            <!-- Short Description -->
+            <p id="product-desc-el" class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+              A timeless masterpiece of understated luxury. Suspended upon our signature micro-faceted Venetian chain in 18K Champagne Gold, a hand-selected 1.2 carat round brilliant diamond shines with supreme fire and clarity.
+            </p>
+
+            <!-- Variant Selector: Precious Metal -->
+            <div class="space-y-2.5">
+              <div class="flex justify-between text-xs">
+                <span class="uppercase tracking-widest text-[var(--text-muted)] font-bold">Precious Metal:</span>
+                <span id="selected-metal-name" class="font-semibold text-[var(--color-gold)]">18K Champagne Gold</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onclick="ProductDetailController.selectMetal('18K Champagne Gold')"
+                  class="metal-variant-btn p-3 border border-[var(--color-gold)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-semibold flex items-center justify-between"
+                  id="btn-metal-opt-gold"
+                >
+                  <span class="flex items-center gap-2">
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#C6A15B] border border-black/20"></span>
+                    <span>18K Gold</span>
+                  </span>
+                  <span class="text-[10px] text-[var(--text-muted)]">Included</span>
+                </button>
+                <button
+                  type="button"
+                  onclick="ProductDetailController.selectMetal('925 Sterling Silver')"
+                  class="metal-variant-btn p-3 border border-[var(--border-color)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-semibold flex items-center justify-between hover:border-[var(--color-silver)]"
+                  id="btn-metal-opt-silver"
+                >
+                  <span class="flex items-center gap-2">
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#C8CCD0] border border-black/20"></span>
+                    <span>925 Silver</span>
+                  </span>
+                  <span class="text-[10px] text-[var(--text-muted)]">Rhodium</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Variant Selector: Chain Length -->
+            <div class="space-y-2.5">
+              <div class="flex justify-between text-xs">
+                <span class="uppercase tracking-widest text-[var(--text-muted)] font-bold">Chain Length:</span>
+                <a href="#sizing-guide" class="text-[var(--color-gold)] underline text-[11px]">View Length Diagram</a>
+              </div>
+              <div class="grid grid-cols-4 gap-2 text-xs font-bold">
+                <button type="button" onclick="ProductDetailController.selectLength('16&quot;')" class="length-variant-btn py-2.5 border border-[var(--border-color)] hover:border-[var(--color-gold)] bg-[var(--bg-secondary)] text-center">16&quot;</button>
+                <button type="button" onclick="ProductDetailController.selectLength('18&quot;')" class="length-variant-btn py-2.5 border border-[var(--color-gold)] bg-[var(--color-gold)] text-black text-center">18&quot;</button>
+                <button type="button" onclick="ProductDetailController.selectLength('20&quot;')" class="length-variant-btn py-2.5 border border-[var(--border-color)] hover:border-[var(--color-gold)] bg-[var(--bg-secondary)] text-center">20&quot;</button>
+                <button type="button" onclick="ProductDetailController.selectLength('22&quot;')" class="length-variant-btn py-2.5 border border-[var(--border-color)] hover:border-[var(--color-gold)] bg-[var(--bg-secondary)] text-center">22&quot;</button>
+              </div>
+            </div>
+
+            <!-- Quantity & Actions (Add to Cart / Wishlist) -->
+            <div class="pt-4 space-y-3">
+              <div class="flex items-center gap-4">
+                <!-- Quantity Stepper -->
+                <div class="flex items-center border border-[var(--border-color)] bg-[var(--bg-secondary)] h-12">
+                  <button type="button" onclick="ProductDetailController.updateQty(-1)" class="px-3.5 text-base hover:bg-[var(--border-color)] text-[var(--text-primary)]">-</button>
+                  <span id="product-detail-qty" class="px-4 font-bold text-sm text-[var(--text-primary)]">1</span>
+                  <button type="button" onclick="ProductDetailController.updateQty(1)" class="px-3.5 text-base hover:bg-[var(--border-color)] text-[var(--text-primary)]">+</button>
+                </div>
+
+                <!-- Add to Bag Button -->
+                <button
+                  type="button"
+                  onclick="ProductDetailController.handleAddToCart()"
+                  class="flex-1 h-12 btn-luxury-gold text-xs font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                  <span>Add to Shopping Bag</span>
+                </button>
+
+                <!-- Wishlist Button -->
+                <button
+                  type="button"
+                  id="detail-wishlist-toggle"
+                  onclick="ProductDetailController.handleToggleWishlist()"
+                  class="w-12 h-12 border border-[var(--border-color)] flex items-center justify-center text-[var(--text-muted)] hover:text-red-500 transition-colors"
+                  aria-label="Add to Wishlist"
+                >
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </button>
+              </div>
+
+              <!-- Instant Trust Note -->
+              <div class="flex items-center justify-between text-[11px] text-[var(--text-muted)] pt-2">
+                <span>✓ Complimentary Insured Courier</span>
+                <span>✓ 30-Day Atelier Returns</span>
+                <span>✓ Lifetime Assay Guarantee</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: PRODUCT INFORMATION AND JEWELRY CARE (Luxury Accordion / Tabs)
+         ========================================================================= -->
+    <section id="sizing-guide" class="py-20 bg-[var(--bg-secondary)] border-t border-[var(--border-color)] transition-colors duration-400">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-xl mx-auto mb-12 space-y-2" data-aos="fade-up">
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Atelier Specifications</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">
+            Craftsmanship & Care Details
+          </h2>
+        </div>
+
+        <!-- Refined Tab Bar -->
+        <div class="flex border-b border-[var(--border-color)] mb-8 overflow-x-auto space-x-6 rtl:space-x-reverse text-xs uppercase tracking-widest font-bold text-[var(--text-muted)]" data-aos="fade-up">
+          <button onclick="ProductDetailController.switchTab('specs')" id="tab-btn-specs" class="detail-tab-btn pb-3 border-b-2 border-[var(--color-gold)] text-[var(--text-primary)] whitespace-nowrap">
+            Specifications
+          </button>
+          <button onclick="ProductDetailController.switchTab('sizing')" id="tab-btn-sizing" class="detail-tab-btn pb-3 border-b-2 border-transparent hover:text-[var(--text-primary)] whitespace-nowrap">
+            Sizing Diagram
+          </button>
+          <button onclick="ProductDetailController.switchTab('care')" id="tab-btn-care" class="detail-tab-btn pb-3 border-b-2 border-transparent hover:text-[var(--text-primary)] whitespace-nowrap">
+            Jewelry Care
+          </button>
+          <button onclick="ProductDetailController.switchTab('packaging')" id="tab-btn-packaging" class="detail-tab-btn pb-3 border-b-2 border-transparent hover:text-[var(--text-primary)] whitespace-nowrap">
+            Presentation & Packaging
+          </button>
+          <button onclick="ProductDetailController.switchTab('shipping')" id="tab-btn-shipping" class="detail-tab-btn pb-3 border-b-2 border-transparent hover:text-[var(--text-primary)] whitespace-nowrap">
+            Delivery & Guarantee
+          </button>
+        </div>
+
+        <!-- Tab 1: Specifications Content -->
+        <div id="tab-pane-specs" class="detail-tab-pane bg-[var(--bg-surface)] border border-[var(--border-color)] p-6 sm:p-8 space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs" id="specs-grid-content">
+            <!-- Dynamically populated from product.details -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Sizing Diagram Content -->
+        <div id="tab-pane-sizing" class="detail-tab-pane hidden bg-[var(--bg-surface)] border border-[var(--border-color)] p-6 sm:p-8 space-y-6">
+          <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">Necklace Length Reference Chart</h4>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+            <div class="p-4 border border-[var(--border-subtle)] bg-[var(--bg-secondary)] space-y-2">
+              <strong class="font-serif text-lg text-[var(--color-gold)]">16" Collar / Choker</strong>
+              <p class="text-[var(--text-secondary)]">Rests gracefully at the base of the neck. Ideal for scoop necks and off-the-shoulder gowns.</p>
+            </div>
+            <div class="p-4 border border-[var(--color-gold)] bg-[var(--bg-secondary)] space-y-2">
+              <strong class="font-serif text-lg text-[var(--color-gold)]">18" Princess (Standard)</strong>
+              <p class="text-[var(--text-secondary)]">Rests comfortably near the collarbone. The most versatile length for daily wear and solitaire pendants.</p>
+            </div>
+            <div class="p-4 border border-[var(--border-subtle)] bg-[var(--bg-secondary)] space-y-2">
+              <strong class="font-serif text-lg text-[var(--color-gold)]">20" Matinee</strong>
+              <p class="text-[var(--text-secondary)]">Falls between the collarbone and bustline. Ideal for layering over silk sweaters and turtlenecks.</p>
+            </div>
+            <div class="p-4 border border-[var(--border-subtle)] bg-[var(--bg-secondary)] space-y-2">
+              <strong class="font-serif text-lg text-[var(--color-gold)]">22"-24" Opera</strong>
+              <p class="text-[var(--text-secondary)]">Dramatic drop silhouette. Pairs exceptionally well with plunging necklines and lariats.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Care Instructions Content -->
+        <div id="tab-pane-care" class="detail-tab-pane hidden bg-[var(--bg-surface)] border border-[var(--border-color)] p-6 sm:p-8 space-y-4 text-xs leading-relaxed text-[var(--text-secondary)]">
+          <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">Preserving Your Heirloom</h4>
+          <p>
+            <strong>18K Solid Champagne Gold:</strong> Solid gold does not tarnish, yet daily oils and cosmetics can cloud diamond fire. Clean gently using warm water, mild soap, and the complimentary Aurelia micro-fiber polishing brush.
+          </p>
+          <p>
+            <strong>925 Sterling Silver:</strong> Our silver creations are sealed with an anti-tarnish rhodium barrier. Store your necklace in the provided airtight anti-oxidation suede pouch when not worn. Avoid wearing during swimming or thermal baths.
+          </p>
+        </div>
+
+        <!-- Tab 4: Packaging Details -->
+        <div id="tab-pane-packaging" class="detail-tab-pane hidden bg-[var(--bg-surface)] border border-[var(--border-color)] p-6 sm:p-8 space-y-4 text-xs text-[var(--text-secondary)]">
+          <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">The Aurelia Unboxing Ritual</h4>
+          <p>Every acquisition arrives encased in our signature forest-green velvet jeweler’s box, finished with an embossed gold monogram and hand-waxed parchment certificate of authenticity.</p>
+        </div>
+
+        <!-- Tab 5: Delivery & Guarantee -->
+        <div id="tab-pane-shipping" class="detail-tab-pane hidden bg-[var(--bg-surface)] border border-[var(--border-color)] p-6 sm:p-8 space-y-4 text-xs text-[var(--text-secondary)]">
+          <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">Insured Transit & Lifetime Assayed Guarantee</h4>
+          <p>All shipments are dispatched via armored FedEx International Priority with private signature-required delivery. Should you require chain adjustments or prong re-tightening, our Geneva atelier provides lifetime complimentary servicing.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: RELATED NECKLACES AND REVIEWS (Combined with Shared Footer)
+         ========================================================================= -->
+    <section id="reviews-related-footer" class="py-20 bg-[var(--bg-primary)] border-t border-[var(--border-color)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        
+        <!-- Verified Reviews Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 border-b border-[var(--border-subtle)] pb-8">
+          <div>
+            <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Client Appraisals</span>
+            <h3 class="font-serif text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mt-1">
+              Customer Reviews (<span id="reviews-header-count">2</span>)
+            </h3>
+            <div class="flex items-center gap-2 mt-2">
+              <span class="text-[var(--color-gold)] font-bold text-lg">★★★★★</span>
+              <span class="font-serif text-xl font-bold text-[var(--text-primary)]">4.9 / 5.0</span>
+              <span class="text-xs text-[var(--text-muted)]">• Verified Acquisitions</span>
+            </div>
+          </div>
+
+          <!-- Write a Review Button -->
+          <button onclick="ProductDetailController.openReviewModal()" class="px-6 py-3 btn-luxury-ghost text-xs font-bold uppercase tracking-widest">
+            Write an Appraisal
+          </button>
+        </div>
+
+        <!-- Reviews List -->
+        <div id="product-reviews-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+          <!-- Dynamically populated reviews -->
+        </div>
+
+        <!-- Related Necklaces Showcase -->
+        <div class="text-center max-w-xl mx-auto mb-12 space-y-2" data-aos="fade-up">
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Complementary Creations</span>
+          <h3 class="font-serif text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">Related Necklaces</h3>
+        </div>
+
+        <div id="related-necklaces-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Dynamically populated related necklaces with 3D tilt cards -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Combined Shared Global Footer -->
+    <div id="aurelia-footer"></div>
+  </main>
+
+  <!-- Interactive Overlays -->
+  <div id="aurelia-interactive-overlays"></div>
+
+  <!-- Review Modal -->
+  <div id="review-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] w-full max-w-lg p-6 sm:p-8 space-y-5 shadow-2xl relative">
+      <button onclick="ProductDetailController.closeReviewModal()" class="absolute top-4 right-4 text-[var(--text-muted)] hover:text-[var(--text-primary)]">
+        ✕
+      </button>
+      <h4 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Write an Atelier Appraisal</h4>
+      <form onsubmit="ProductDetailController.submitReview(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1">Your Name</label>
+          <input id="review-author" type="text" required placeholder="e.g. Lady Vivienne S." class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]" />
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1">Location</label>
+          <input id="review-location" type="text" placeholder="e.g. Zurich, Switzerland" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]" />
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1">Rating</label>
+          <select id="review-rating" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs">
+            <option value="5">★★★★★ (5/5 Supreme Luxury)</option>
+            <option value="4">★★★★☆ (4/5 Excellent)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1">Appraisal Title</label>
+          <input id="review-title" type="text" required placeholder="e.g. Magnificent fire in the stones" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]" />
+        </div>
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1">Review Comments</label>
+          <textarea id="review-comment" required rows="3" placeholder="Share your experience with the craftsmanship..." class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 btn-luxury-gold text-xs font-bold uppercase tracking-widest">
+          Submit Appraisal
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- AOS CDN Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Data & Application Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Product Details Logic -->
+  <script>
+    const ProductDetailController = {
+      product: null,
+      selectedMetal: "18K Champagne Gold",
+      selectedLength: "18\"",
+      qty: 1,
+
+      init() {
+        const params = new URLSearchParams(window.location.search);
+        const prodId = params.get("id") || "aurelia-solitaire-gold";
+        this.product = StorageManager.getProductById(prodId);
+
+        if (!this.product) {
+          this.product = StorageManager.getProducts()[0];
+        }
+
+        this.selectedMetal = this.product.metalType || "18K Champagne Gold";
+        this.selectedLength = this.product.length || "18\"";
+
+        this.renderProductData();
+        this.renderReviews();
+        this.renderRelatedProducts();
+        this.initLoupeZoom();
+      },
+
+      renderProductData() {
+        const p = this.product;
+
+        // Title and meta
+        document.title = `${p.name} | AURELIA Fine Jewelry`;
+        document.getElementById("breadcrumb-product-name").textContent = p.name;
+        document.getElementById("product-title-el").textContent = p.name;
+        document.getElementById("product-subtitle-el").textContent = p.subtitle || p.metalType;
+        document.getElementById("product-desc-el").textContent = p.description;
+        document.getElementById("product-price-el").textContent = `$${p.price.toLocaleString()}`;
+        document.getElementById("product-hallmark-badge").textContent = p.details?.karat || p.metalType;
+
+        const origEl = document.getElementById("product-orig-price-el");
+        if (p.originalPrice) {
+          origEl.textContent = `$${p.originalPrice.toLocaleString()}`;
+          origEl.classList.remove("hidden");
+        } else {
+          origEl.classList.add("hidden");
+        }
+
+        // Main Image
+        const mainImg = document.getElementById("main-product-image");
+        if (mainImg) mainImg.src = p.image;
+
+        // Thumbnails
+        const thumbCol = document.getElementById("product-thumbnails-col");
+        if (thumbCol && p.gallery) {
+          thumbCol.innerHTML = p.gallery.map((imgSrc, idx) => `
+            <button
+              onclick="ProductDetailController.switchImage('${imgSrc}', this)"
+              class="w-16 sm:w-20 aspect-square border ${idx === 0 ? 'border-[var(--color-gold)]' : 'border-[var(--border-color)]'} overflow-hidden bg-[var(--bg-secondary)] hover:border-[var(--color-gold)] transition-colors flex-shrink-0"
+            >
+              <img src="${imgSrc}" class="w-full h-full object-cover object-center" />
+            </button>
+          `).join('');
+        }
+
+        // Specs Grid
+        const specsGrid = document.getElementById("specs-grid-content");
+        if (specsGrid && p.details) {
+          specsGrid.innerHTML = `
+            <div>
+              <span class="text-[var(--text-muted)] uppercase tracking-wider block font-bold text-[10px]">Precious Metal Hallmark</span>
+              <strong class="text-sm font-serif text-[var(--text-primary)]">${p.details.karat}</strong>
+            </div>
+            <div>
+              <span class="text-[var(--text-muted)] uppercase tracking-wider block font-bold text-[10px]">Gemstone & Cut</span>
+              <strong class="text-sm font-serif text-[var(--text-primary)]">${p.details.stone}</strong>
+            </div>
+            <div>
+              <span class="text-[var(--text-muted)] uppercase tracking-wider block font-bold text-[10px]">Chain Proportions</span>
+              <strong class="text-sm font-serif text-[var(--text-primary)]">${p.details.chainLength}</strong>
+            </div>
+            <div>
+              <span class="text-[var(--text-muted)] uppercase tracking-wider block font-bold text-[10px]">Clasp Architecture</span>
+              <strong class="text-sm font-serif text-[var(--text-primary)]">${p.details.clasp}</strong>
+            </div>
+            <div>
+              <span class="text-[var(--text-muted)] uppercase tracking-wider block font-bold text-[10px]">Gold Weight</span>
+              <strong class="text-sm font-serif text-[var(--text-primary)]">${p.details.weight}</strong>
+            </div>
+            <div>
+              <span class="text-[var(--text-muted)] uppercase tracking-wider block font-bold text-[10px]">Atelier Provenance</span>
+              <strong class="text-sm font-serif text-[var(--text-primary)]">${p.details.origin}</strong>
+            </div>
+          `;
+        }
+
+        this.updateWishlistButtonState();
+      },
+
+      switchImage(src, btn) {
+        const mainImg = document.getElementById("main-product-image");
+        if (mainImg) mainImg.src = src;
+
+        document.querySelectorAll("#product-thumbnails-col button").forEach(b => {
+          b.classList.remove("border-[var(--color-gold)]");
+          b.classList.add("border-[var(--border-color)]");
+        });
+        if (btn) {
+          btn.classList.add("border-[var(--color-gold)]");
+          btn.classList.remove("border-[var(--border-color)]");
+        }
+      },
+
+      selectMetal(metal) {
+        this.selectedMetal = metal;
+        document.getElementById("selected-metal-name").textContent = metal;
+        document.querySelectorAll(".metal-variant-btn").forEach(b => {
+          b.classList.remove("border-[var(--color-gold)]", "border-[var(--color-silver)]");
+          b.classList.add("border-[var(--border-color)]");
+        });
+        const isGold = metal.includes("Gold");
+        const activeBtn = document.getElementById(isGold ? "btn-metal-opt-gold" : "btn-metal-opt-silver");
+        if (activeBtn) {
+          activeBtn.classList.add(isGold ? "border-[var(--color-gold)]" : "border-[var(--color-silver)]");
+        }
+      },
+
+      selectLength(len) {
+        this.selectedLength = len;
+        document.querySelectorAll(".length-variant-btn").forEach(b => {
+          b.classList.remove("bg-[var(--color-gold)]", "text-black", "border-[var(--color-gold)]");
+          b.classList.add("border-[var(--border-color)]");
+          if (b.textContent.trim() === len.replace(/&quot;/g, '"')) {
+            b.classList.add("bg-[var(--color-gold)]", "text-black", "border-[var(--color-gold)]");
+          }
+        });
+      },
+
+      updateQty(delta) {
+        this.qty = Math.max(1, this.qty + delta);
+        document.getElementById("product-detail-qty").textContent = this.qty;
+      },
+
+      handleAddToCart() {
+        StorageManager.addToCart(this.product.id, this.qty, {
+          metal: this.selectedMetal,
+          length: this.selectedLength
+        });
+        AureliaApp.showToast(`Added ${this.qty} × ${this.product.name} to your bag`, "gold");
+      },
+
+      handleToggleWishlist() {
+        const inWish = StorageManager.toggleWishlist(this.product.id);
+        this.updateWishlistButtonState();
+        AureliaApp.showToast(inWish ? "Added to your Wishlist" : "Removed from Wishlist", "gold");
+      },
+
+      updateWishlistButtonState() {
+        const btn = document.getElementById("detail-wishlist-toggle");
+        if (!btn || !this.product) return;
+        const inWish = StorageManager.isInWishlist(this.product.id);
+        btn.classList.toggle("text-red-500", inWish);
+      },
+
+      switchTab(tabKey) {
+        document.querySelectorAll(".detail-tab-btn").forEach(b => {
+          b.classList.remove("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+          b.classList.add("border-transparent");
+        });
+        document.querySelectorAll(".detail-tab-pane").forEach(p => p.classList.add("hidden"));
+
+        const targetBtn = document.getElementById(`tab-btn-${tabKey}`);
+        const targetPane = document.getElementById(`tab-pane-${tabKey}`);
+        if (targetBtn && targetPane) {
+          targetBtn.classList.add("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+          targetBtn.classList.remove("border-transparent");
+          targetPane.classList.remove("hidden");
+        }
+      },
+
+      renderReviews() {
+        const container = document.getElementById("product-reviews-container");
+        const countHeader = document.getElementById("reviews-header-count");
+        if (!container) return;
+
+        const reviews = StorageManager.getReviews(this.product.id);
+        if (countHeader) countHeader.textContent = reviews.length;
+
+        if (reviews.length === 0) {
+          container.innerHTML = `
+            <div class="col-span-full p-8 bg-[var(--bg-secondary)] border border-[var(--border-color)] text-center text-xs text-[var(--text-muted)]">
+              Be the first collector to review this exquisite piece.
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = reviews.map(r => `
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-[var(--color-gold)] font-bold">★★★★★</span>
+              <span class="text-[var(--text-muted)] text-[10px]">${r.date}</span>
+            </div>
+            <h5 class="font-serif text-base font-bold text-[var(--text-primary)]">${r.title}</h5>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed italic">"${r.comment}"</p>
+            <div class="pt-2 border-t border-[var(--border-subtle)] flex items-center justify-between text-[11px]">
+              <span class="font-bold text-[var(--text-primary)]">${r.author}</span>
+              <span class="text-emerald-600 font-medium">✓ Verified Acquisition</span>
+            </div>
+          </div>
+        `).join('');
+      },
+
+      renderRelatedProducts() {
+        const grid = document.getElementById("related-necklaces-grid");
+        if (!grid) return;
+
+        const all = StorageManager.getProducts();
+        const related = all.filter(p => p.id !== this.product.id).slice(0, 3);
+
+        grid.innerHTML = related.map((p, idx) => `
+          <div class="tilt-card group bg-[var(--bg-surface)] border border-[var(--border-color)] flex flex-col justify-between overflow-hidden shadow-sm ${idx === 2 ? 'md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full' : ''}" data-aos="fade-up" data-aos-delay="${idx * 100}">
+            <div class="relative aspect-square overflow-hidden bg-[var(--bg-secondary)]">
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+              <button
+                onclick="event.stopPropagation(); const inWish = StorageManager.toggleWishlist('${p.id}'); AureliaApp.showToast(inWish ? 'Added to Wishlist' : 'Removed from Wishlist', '${p.metal}'); this.classList.toggle('text-red-500', inWish);"
+                class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[var(--bg-surface)]/90 border border-[var(--border-color)] flex items-center justify-center text-[var(--text-muted)] hover:text-red-500 transition-colors ${StorageManager.isInWishlist(p.id) ? 'text-red-500' : ''}"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              </button>
+            </div>
+            <div class="p-5 space-y-3">
+              <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-medium">${p.metalType}</div>
+              <h5 class="font-serif text-base font-bold text-[var(--text-primary)] line-clamp-2 min-h-[2.85rem] leading-snug max-w-[210px]">
+                <a href="product.html?id=${p.id}" class="hover:text-[var(--color-gold)] transition-colors">${p.name}</a>
+              </h5>
+              <div class="flex items-center justify-between pt-2 border-t border-[var(--border-subtle)]">
+                <span class="font-serif text-lg font-bold text-[var(--text-primary)]">$${p.price.toLocaleString()}</span>
+                <button onclick="StorageManager.addToCart('${p.id}', 1); AureliaApp.showToast('Added to bag', '${p.metal}')" class="px-3 py-1.5 btn-luxury-ghost text-[10px] font-bold uppercase tracking-wider">
+                  Add to Bag
+                </button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+
+        AureliaApp.init3DTilt();
+      },
+
+      initLoupeZoom() {
+        const stage = document.getElementById("zoom-stage-container");
+        const img = document.getElementById("main-product-image");
+        if (stage && img) {
+          stage.addEventListener("mousemove", (e) => {
+            const rect = stage.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            img.style.transformOrigin = `${x}% ${y}%`;
+          });
+          stage.addEventListener("mouseleave", () => {
+            img.style.transformOrigin = "center center";
+          });
+        }
+      },
+
+      openReviewModal() {
+        const modal = document.getElementById("review-modal");
+        if (modal) modal.classList.remove("opacity-0", "pointer-events-none");
+      },
+
+      closeReviewModal() {
+        const modal = document.getElementById("review-modal");
+        if (modal) modal.classList.add("opacity-0", "pointer-events-none");
+      },
+
+      submitReview(e) {
+        e.preventDefault();
+        const author = document.getElementById("review-author").value;
+        const location = document.getElementById("review-location").value;
+        const rating = parseInt(document.getElementById("review-rating").value);
+        const title = document.getElementById("review-title").value;
+        const comment = document.getElementById("review-comment").value;
+
+        StorageManager.addReview({
+          productId: this.product.id,
+          author,
+          location,
+          rating,
+          title,
+          comment
+        });
+
+        this.closeReviewModal();
+        this.renderReviews();
+        AureliaApp.showToast("Your appraisal has been published to the salon", "gold");
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      ProductDetailController.init();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Authentication & Atelier Dashboards | AURELIA</title>
+  <meta name="description" content="Secure client portal for Aurelia Haute Joaillerie. Access order tracking, bespoke custom jewelry designs, and atelier management." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Tailwind CSS 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            champagne: '#C6A15B',
+            charcoal: '#191816',
+            ivory: '#FAF7F0',
+            silver: '#C8CCD0',
+            beige: '#E8DFD0'
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS Library CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased transition-colors duration-400 min-h-screen flex flex-col justify-between">
+
+  <!-- TOP MINIMAL AUTH HEADER (Returns to Home, Theme Toggle) -->
+  <header class="py-4 px-4 sm:px-12 border-b border-[var(--border-color)] bg-[var(--bg-secondary)] flex items-center justify-between gap-2">
+    <a href="index.html" class="flex items-center gap-2 group shrink-0">
+      <svg class="w-5 h-5 text-[var(--color-gold)] transition-transform group-hover:rotate-45" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="12,2 22,12 12,22 2,12" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+      </svg>
+      <span class="font-serif text-xl sm:text-2xl tracking-[0.2em] sm:tracking-[0.25em] font-bold text-[var(--text-primary)]">AURELIA</span>
+    </a>
+
+    <div class="flex items-center space-x-2.5 sm:space-x-4 text-xs shrink-0">
+      <a href="index.html" class="hover:text-[var(--color-gold)] transition-colors uppercase tracking-wider font-semibold whitespace-nowrap">
+        <span class="sm:hidden">← Salon</span>
+        <span class="hidden sm:inline">← Return to Salon</span>
+      </a>
+      <span>•</span>
+      <button onclick="AureliaApp.toggleTheme()" class="hover:text-[var(--color-gold)] flex items-center gap-1.5">
+        <span class="theme-toggle-icon"></span>
+        <span class="hidden sm:inline">Theme</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6">
+    
+    <!-- =========================================================================
+         VIEW 1: PUBLIC AUTHENTICATION SCREEN (Login & Sign Up Forms)
+         ========================================================================= -->
+    <div id="auth-view-container" class="w-full max-w-4xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 transition-all duration-500">
+      
+      <!-- Left Column: Editorial Imagery & Brand Value (Spans 5 cols) -->
+      <div class="hidden lg:flex lg:col-span-5 relative bg-[#181715] text-[#FAF7F0] p-10 flex-col justify-between overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80"
+          alt="Aurelia Private Salon"
+          class="absolute inset-0 w-full h-full object-cover object-center opacity-40"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+
+        <div class="relative z-10 space-y-2">
+          <span class="text-[10px] uppercase tracking-[0.3em] text-[#ECC880] font-bold">Client Privileges</span>
+          <h2 class="font-serif text-2xl font-bold">The Aurelia Sanctuary</h2>
+        </div>
+
+        <div class="relative z-10 space-y-4 text-xs text-[#D4CDC3] leading-relaxed font-light">
+          <p>
+            Members enjoy private viewing privileges, real-time insured courier manifests, and bespoke commission records.
+          </p>
+          <div class="pt-4 border-t border-white/10 space-y-2 text-[11px]">
+            <div class="flex items-center gap-2">
+              <span class="text-[#ECC880]">✓</span>
+              <span>Geneva Vault Order Manifests</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#ECC880]">✓</span>
+              <span>Saved 3D Custom Studio Designs</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#ECC880]">✓</span>
+              <span>Lifetime Appraisal Documentation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Authentication Forms (Spans 7 cols) -->
+      <div class="lg:col-span-7 p-6 sm:p-10 space-y-6">
+        
+        <!-- Tab Switcher: Login vs Sign Up -->
+        <div class="flex border-b border-[var(--border-color)]">
+          <button
+            type="button"
+            onclick="AuthController.switchAuthTab('login')"
+            id="tab-btn-login"
+            class="flex-1 pb-3 text-xs uppercase tracking-[0.2em] font-bold border-b-2 border-[var(--color-gold)] text-[var(--text-primary)]"
+          >
+            Client Sign In
+          </button>
+          <button
+            type="button"
+            onclick="AuthController.switchAuthTab('signup')"
+            id="tab-btn-signup"
+            class="flex-1 pb-3 text-xs uppercase tracking-[0.2em] font-bold border-b-2 border-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+          >
+            Create Account
+          </button>
+        </div>
+
+        <!-- Demo Mode Clarification Alert -->
+        <div class="p-3 bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs flex items-center justify-between">
+          <span class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            <span><strong>Demo Mode:</strong> Use quick demo credentials below to explore dashboards.</span>
+          </span>
+        </div>
+
+        <!-- Quick Demo Login Buttons -->
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <button
+            type="button"
+            onclick="AuthController.quickDemoLogin('customer')"
+            class="py-2.5 px-3 border border-[var(--color-gold)] bg-[var(--bg-secondary)] hover:bg-[var(--color-gold)] hover:text-black transition-colors font-bold text-center"
+          >
+            Demo Customer Login
+          </button>
+          <button
+            type="button"
+            onclick="AuthController.quickDemoLogin('admin')"
+            class="py-2.5 px-3 border border-purple-500/40 bg-purple-500/10 hover:bg-purple-600 hover:text-white transition-colors font-bold text-center text-purple-600 dark:text-purple-300"
+          >
+            Demo Admin Login
+          </button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form id="form-login" onsubmit="AuthController.handleLogin(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Email Address</label>
+            <input
+              id="login-email"
+              type="email"
+              required
+              placeholder="eleanor.vance@luxury.com"
+              value="eleanor.vance@luxury.com"
+              class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-4 py-2.5 text-xs text-[var(--text-primary)] focus:outline-none focus:border-[var(--color-gold)]"
+            />
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="text-xs uppercase tracking-wider text-[var(--text-muted)] font-bold">Password</label>
+              <a href="#" onclick="alert('Password reset link sent to demo email address.')" class="text-[11px] text-[var(--color-gold)] hover:underline">Forgot Password?</a>
+            </div>
+            <div class="relative">
+              <input
+                id="login-password"
+                type="password"
+                required
+                value="secret123"
+                placeholder="Enter password"
+                class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-4 py-2.5 text-xs text-[var(--text-primary)] focus:outline-none focus:border-[var(--color-gold)]"
+              />
+              <button
+                type="button"
+                onclick="AuthController.togglePasswordVisibility('login-password')"
+                class="absolute right-3 top-2.5 text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+              >
+                👁
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="login-remember" checked class="accent-[var(--color-gold)]" />
+              <span class="text-[var(--text-secondary)]">Remember my session</span>
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            id="login-submit-btn"
+            class="w-full py-3.5 btn-luxury-gold text-xs font-bold uppercase tracking-[0.2em]"
+          >
+            Sign In to Atelier
+          </button>
+        </form>
+
+        <!-- SIGN UP FORM (Initially Hidden) -->
+        <form id="form-signup" onsubmit="AuthController.handleSignup(event)" class="space-y-4 hidden">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">First Name</label>
+              <input id="signup-fname" type="text" required placeholder="Claire" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]" />
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Last Name</label>
+              <input id="signup-lname" type="text" required placeholder="Beauchamp" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Email Address</label>
+            <input id="signup-email" type="email" required placeholder="claire.b@luxury.com" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]" />
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Password</label>
+            <div class="relative">
+              <input id="signup-password" type="password" required placeholder="Minimum 8 characters" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]" />
+              <button type="button" onclick="AuthController.togglePasswordVisibility('signup-password')" class="absolute right-3 top-2 text-[var(--text-muted)]">👁</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Confirm Password</label>
+            <input id="signup-confirm-password" type="password" required placeholder="Re-enter password" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]" />
+          </div>
+
+          <div class="flex items-start gap-2 text-xs text-[var(--text-muted)]">
+            <input type="checkbox" required class="mt-0.5 accent-[var(--color-gold)]" />
+            <span>I agree to the Aurelia Salon Terms of Service and Privacy Policy.</span>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 btn-luxury-gold text-xs font-bold uppercase tracking-[0.2em]">
+            Create Client Profile
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         VIEW 2: PROTECTED CUSTOMER DASHBOARD (Shown when logged in as customer)
+         ========================================================================= -->
+    <div id="customer-dashboard-container" class="w-full max-w-6xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-2xl p-6 sm:p-10 space-y-8 hidden">
+      
+      <!-- Dashboard Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[var(--border-color)] gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Aurelia Private Member</span>
+          <h2 class="font-serif text-3xl font-bold text-[var(--text-primary)] mt-1">
+            Welcome back, <span id="cust-dash-name">Eleanor Vance</span>
+          </h2>
+          <div class="text-xs text-[var(--text-muted)] mt-0.5" id="cust-dash-email">eleanor.vance@luxury.com</div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button onclick="AuthController.switchRole('admin')" class="px-4 py-2 border border-purple-500/40 text-purple-600 dark:text-purple-300 text-xs font-bold hover:bg-purple-500/10 transition-colors">
+            Switch to Admin View ⚙
+          </button>
+          <button onclick="AuthController.handleLogout()" class="px-4 py-2 btn-luxury-ghost text-xs font-bold uppercase tracking-wider">
+            Sign Out
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Stats KPI Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-4 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1">
+          <div class="text-[10px] uppercase text-[var(--text-muted)] font-bold">Total Acquisitions</div>
+          <div id="cust-kpi-orders" class="font-serif text-2xl font-bold text-[var(--text-primary)]">3</div>
+        </div>
+        <div class="p-4 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1">
+          <div class="text-[10px] uppercase text-[var(--text-muted)] font-bold">Wishlist Pieces</div>
+          <div id="cust-kpi-wishlist" class="font-serif text-2xl font-bold text-[var(--color-gold)]">2</div>
+        </div>
+        <div class="p-4 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1">
+          <div class="text-[10px] uppercase text-[var(--text-muted)] font-bold">Saved 3D Designs</div>
+          <div id="cust-kpi-custom" class="font-serif text-2xl font-bold text-[var(--text-primary)]">1</div>
+        </div>
+        <div class="p-4 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1">
+          <div class="text-[10px] uppercase text-[var(--text-muted)] font-bold">Salon Tier</div>
+          <div class="font-serif text-2xl font-bold text-[#ECC880]">Geneva Gold</div>
+        </div>
+      </div>
+
+      <!-- Customer Navigation Tabs -->
+      <div class="flex border-b border-[var(--border-color)] space-x-6 rtl:space-x-reverse text-xs uppercase tracking-widest font-bold overflow-x-auto no-scrollbar">
+        <button onclick="AuthController.switchCustTab('orders')" id="cust-tab-btn-orders" class="pb-3 border-b-2 border-[var(--color-gold)] text-[var(--text-primary)] whitespace-nowrap shrink-0">
+          My Order History
+        </button>
+        <button onclick="AuthController.switchCustTab('wishlist')" id="cust-tab-btn-wishlist" class="pb-3 border-b-2 border-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)] whitespace-nowrap shrink-0">
+          Wishlist
+        </button>
+        <button onclick="AuthController.switchCustTab('saved-designs')" id="cust-tab-btn-saved-designs" class="pb-3 border-b-2 border-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)] whitespace-nowrap shrink-0">
+          Bespoke 3D Designs
+        </button>
+        <button onclick="AuthController.switchCustTab('addresses')" id="cust-tab-btn-addresses" class="pb-3 border-b-2 border-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)] whitespace-nowrap shrink-0">
+          Vault Addresses
+        </button>
+      </div>
+
+      <!-- Tab Pane 1: Orders -->
+      <div id="cust-pane-orders" class="space-y-4">
+        <div id="customer-orders-list" class="space-y-4">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Tab Pane 2: Wishlist -->
+      <div id="cust-pane-wishlist" class="hidden">
+        <div id="customer-wishlist-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Tab Pane 3: Saved Custom Designs -->
+      <div id="cust-pane-saved-designs" class="hidden">
+        <div id="customer-saved-designs-list" class="space-y-4">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Tab Pane 4: Saved Addresses -->
+      <div id="cust-pane-addresses" class="hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--color-gold)] space-y-2 text-xs">
+            <span class="px-2 py-0.5 bg-[var(--color-gold)] text-black text-[9px] font-bold uppercase tracking-wider">Default Delivery Vault</span>
+            <h4 class="font-serif text-base font-bold text-[var(--text-primary)] pt-1">Manhattan Penthouse</h4>
+            <p class="text-[var(--text-secondary)]">740 Fifth Avenue, Suite 12B<br />New York, NY 10019<br />United States</p>
+            <div class="pt-2 text-[var(--color-gold)] font-semibold">Contact: +1 (212) 555-0192</div>
+          </div>
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-2 text-xs">
+            <span class="px-2 py-0.5 bg-[var(--border-color)] text-[var(--text-muted)] text-[9px] font-bold uppercase tracking-wider">Secondary</span>
+            <h4 class="font-serif text-base font-bold text-[var(--text-primary)] pt-1">Geneva Residence</h4>
+            <p class="text-[var(--text-secondary)]">Rue du Rhône 42<br />1204 Geneva<br />Switzerland</p>
+            <div class="pt-2 text-[var(--color-gold)] font-semibold">Contact: +41 22 555 410</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =========================================================================
+         VIEW 3: PROTECTED ADMIN MANAGEMENT INTERFACE (Shown when logged in as admin)
+         ========================================================================= -->
+    <div id="admin-dashboard-container" class="w-full max-w-7xl bg-[var(--bg-surface)] border border-[var(--border-color)] shadow-2xl p-6 sm:p-10 space-y-8 hidden">
+      
+      <!-- Admin Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[var(--border-color)] gap-4">
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2.5 py-0.5 bg-purple-600 text-white text-[10px] font-bold uppercase tracking-widest rounded whitespace-nowrap shrink-0">Store Administrator</span>
+            <span class="text-xs text-[var(--text-muted)] whitespace-nowrap">Aurelia Atelier Geneva Core</span>
+          </div>
+          <h2 class="font-serif text-3xl font-bold text-[var(--text-primary)] mt-1.5">
+            Maison Management Console
+          </h2>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button onclick="AuthController.switchRole('customer')" class="px-4 py-2 border border-[var(--color-gold)] text-[var(--color-gold)] text-xs font-bold hover:bg-[var(--color-gold)]/10 transition-colors">
+            Switch to Client View 👤
+          </button>
+          <button onclick="AuthController.handleLogout()" class="px-4 py-2 btn-luxury-ghost text-xs font-bold uppercase tracking-wider">
+            Sign Out
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Top Metrics Grid -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="p-5 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1">
+          <div class="text-[10px] uppercase text-[var(--text-muted)] font-bold">Gross Atelier Revenue</div>
+          <div class="font-serif text-2xl font-bold text-[var(--color-gold)]">$128,450.00</div>
+          <div class="text-[10px] text-emerald-500 font-semibold">↑ +18.4% this quarter</div>
+        </div>
+        <div class="p-5 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1">
+          <div class="text-[10px] uppercase text-[var(--text-muted)] font-bold">Orders Fulfilled</div>
+          <div id="admin-metric-orders" class="font-serif text-2xl font-bold text-[var(--text-primary)]">342</div>
+          <div class="text-[10px] text-[var(--text-muted)]">4 pending craft dispatch</div>
+        </div>
+        <div class="p-5 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1">
+          <div class="text-[10px] uppercase text-[var(--text-muted)] font-bold">Catalog Necklaces</div>
+          <div id="admin-metric-products" class="font-serif text-2xl font-bold text-[var(--text-primary)]">12</div>
+          <div class="text-[10px] text-emerald-500 font-semibold">All Assayed & Verified</div>
+        </div>
+        <div class="p-5 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] space-y-1">
+          <div class="text-[10px] uppercase text-[var(--text-muted)] font-bold">Active Salon Clients</div>
+          <div class="font-serif text-2xl font-bold text-[var(--text-primary)]">820</div>
+          <div class="text-[10px] text-[var(--color-gold)] font-semibold">Geneva, London, NY</div>
+        </div>
+      </div>
+
+      <!-- Admin Navigation Tabs -->
+      <div class="flex border-b border-[var(--border-color)] space-x-6 rtl:space-x-reverse text-xs uppercase tracking-widest font-bold overflow-x-auto">
+        <button onclick="AuthController.switchAdminTab('products')" id="admin-tab-btn-products" class="pb-3 border-b-2 border-[var(--color-gold)] text-[var(--text-primary)] whitespace-nowrap">
+          Product Inventory (12)
+        </button>
+        <button onclick="AuthController.switchAdminTab('orders')" id="admin-tab-btn-orders" class="pb-3 border-b-2 border-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)] whitespace-nowrap">
+          Order Fulfillment
+        </button>
+        <button onclick="AuthController.switchAdminTab('inquiries')" id="admin-tab-btn-inquiries" class="pb-3 border-b-2 border-transparent text-[var(--text-muted)] hover:text-[var(--text-primary)] whitespace-nowrap">
+          Bespoke Inquiries (2)
+        </button>
+      </div>
+
+      <!-- Tab 1: Products Management -->
+      <div id="admin-pane-products" class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">Fine Necklaces Inventory</h4>
+          <button onclick="AuthController.openAddProductModal()" class="px-4 py-2 bg-[var(--color-gold)] text-black text-xs font-bold uppercase tracking-wider hover:bg-[#ECC880] whitespace-nowrap shrink-0 inline-flex items-center justify-center">
+            + Add New Necklace
+          </button>
+        </div>
+        <div class="overflow-x-auto border border-[var(--border-subtle)]">
+          <table class="w-full text-left text-xs text-[var(--text-secondary)] rtl:text-right">
+            <thead class="bg-[var(--bg-secondary)] uppercase tracking-wider text-[10px] text-[var(--text-muted)] border-b border-[var(--border-subtle)]">
+              <tr>
+                <th class="p-3">Piece</th>
+                <th class="p-3">Metal / Karat</th>
+                <th class="p-3">Price</th>
+                <th class="p-3">Stock Vault</th>
+                <th class="p-3">Rating</th>
+                <th class="p-3 text-right rtl:text-left">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-products-table-body" class="divide-y divide-[var(--border-subtle)]">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 2: Orders Fulfillment -->
+      <div id="admin-pane-orders" class="space-y-6 hidden">
+        <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">Client Order Manifests</h4>
+        <div class="overflow-x-auto border border-[var(--border-subtle)]">
+          <table class="w-full text-left text-xs text-[var(--text-secondary)] rtl:text-right">
+            <thead class="bg-[var(--bg-secondary)] uppercase tracking-wider text-[10px] text-[var(--text-muted)] border-b border-[var(--border-subtle)]">
+              <tr>
+                <th class="p-3">Order Ref</th>
+                <th class="p-3">Date</th>
+                <th class="p-3">Client</th>
+                <th class="p-3">Amount</th>
+                <th class="p-3">Current Status</th>
+                <th class="p-3">Update Status</th>
+              </tr>
+            </thead>
+            <tbody id="admin-orders-table-body" class="divide-y divide-[var(--border-subtle)]">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 3: Bespoke Inquiries -->
+      <div id="admin-pane-inquiries" class="space-y-6 hidden">
+        <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">VIP Client Inquiries</h4>
+        <div class="space-y-4" id="admin-inquiries-list">
+          <!-- Populated from AURELIA_DATA.inquiries -->
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Add Product Modal for Admin -->
+  <div id="admin-add-product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] w-full max-w-lg p-6 sm:p-8 space-y-4 shadow-2xl relative">
+      <button onclick="AuthController.closeAddProductModal()" class="absolute top-4 right-4 text-[var(--text-muted)]">✕</button>
+      <h4 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Add New Necklace to Catalog</h4>
+      <form onsubmit="AuthController.handleAddProduct(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Necklace Name</label>
+          <input id="new-prod-name" type="text" required placeholder="e.g. The Royal Sapphire Choker" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs focus:outline-none focus:border-[var(--color-gold)]" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Precious Metal</label>
+            <select id="new-prod-metal" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs">
+              <option value="gold">18K Gold</option>
+              <option value="silver">925 Silver</option>
+            </select>
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Price ($ USD)</label>
+            <input id="new-prod-price" type="number" required placeholder="1850" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs" />
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Style Silhouette</label>
+            <select id="new-prod-style" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs">
+              <option value="pendant">Pendant</option>
+              <option value="choker">Choker</option>
+              <option value="layered">Layered</option>
+              <option value="chain">Chain</option>
+              <option value="tennis">Tennis</option>
+            </select>
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Vault Stock Qty</label>
+            <input id="new-prod-stock" type="number" value="10" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs" />
+          </div>
+        </div>
+        <div>
+          <label class="block uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Image URL</label>
+          <input id="new-prod-img" type="url" value="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs" />
+        </div>
+        <div>
+          <label class="block uppercase tracking-wider text-[var(--text-muted)] mb-1 font-bold">Short Description</label>
+          <textarea id="new-prod-desc" rows="2" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs" placeholder="Hand-finished Italian gold links..."></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 btn-luxury-gold text-xs font-bold uppercase tracking-widest">
+          Publish to Salon Catalog
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Minimal Auth Footer -->
+  <footer class="py-6 px-4 text-center text-xs text-[var(--text-muted)] border-t border-[var(--border-subtle)] bg-[var(--bg-secondary)]">
+    <div>© ${new Date().getFullYear()} AURELIA HAUTE JOAILLERIE • Encrypted Client Portal • Assayed in Geneva</div>
+  </footer>
+
+  <!-- Interactive Overlays -->
+  <div id="aurelia-interactive-overlays"></div>
+
+  <!-- AOS CDN Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Data & Application Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Auth and Protected Dashboards Engine -->
+  <script>
+    const AuthController = {
+      currentUser: null,
+
+      init() {
+        // Check if already logged in
+        this.currentUser = StorageManager.getUser();
+
+        // Check URL tab query param (e.g. ?tab=admin)
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("tab") === "admin") {
+          this.quickDemoLogin("admin");
+          return;
+        }
+
+        this.renderAppropriateView();
+      },
+
+      renderAppropriateView() {
+        const authContainer = document.getElementById("auth-view-container");
+        const custContainer = document.getElementById("customer-dashboard-container");
+        const adminContainer = document.getElementById("admin-dashboard-container");
+
+        if (!this.currentUser) {
+          authContainer.classList.remove("hidden");
+          custContainer.classList.add("hidden");
+          adminContainer.classList.add("hidden");
+        } else if (this.currentUser.role === "admin") {
+          authContainer.classList.add("hidden");
+          custContainer.classList.add("hidden");
+          adminContainer.classList.remove("hidden");
+          this.renderAdminData();
+        } else {
+          // Customer
+          authContainer.classList.add("hidden");
+          custContainer.classList.remove("hidden");
+          adminContainer.classList.add("hidden");
+          this.renderCustomerData();
+        }
+      },
+
+      switchAuthTab(tab) {
+        const formLogin = document.getElementById("form-login");
+        const formSignup = document.getElementById("form-signup");
+        const btnLogin = document.getElementById("tab-btn-login");
+        const btnSignup = document.getElementById("tab-btn-signup");
+
+        if (tab === "login") {
+          formLogin.classList.remove("hidden");
+          formSignup.classList.add("hidden");
+          btnLogin.classList.add("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+          btnLogin.classList.remove("border-transparent", "text-[var(--text-muted)]");
+          btnSignup.classList.remove("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+          btnSignup.classList.add("border-transparent", "text-[var(--text-muted)]");
+        } else {
+          formLogin.classList.add("hidden");
+          formSignup.classList.remove("hidden");
+          btnSignup.classList.add("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+          btnSignup.classList.remove("border-transparent", "text-[var(--text-muted)]");
+          btnLogin.classList.remove("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+          btnLogin.classList.add("border-transparent", "text-[var(--text-muted)]");
+        }
+      },
+
+      togglePasswordVisibility(inputId) {
+        const input = document.getElementById(inputId);
+        if (input) {
+          input.type = input.type === "password" ? "text" : "password";
+        }
+      },
+
+      handleLogin(e) {
+        e.preventDefault();
+        const email = document.getElementById("login-email").value;
+        const role = email.includes("admin") ? "admin" : "customer";
+        this.loginUser({
+          email,
+          name: email.split("@")[0].replace(".", " "),
+          role
+        });
+      },
+
+      handleSignup(e) {
+        e.preventDefault();
+        const fname = document.getElementById("signup-fname").value;
+        const lname = document.getElementById("signup-lname").value;
+        const email = document.getElementById("signup-email").value;
+        this.loginUser({
+          email,
+          name: `${fname} ${lname}`,
+          role: "customer"
+        });
+      },
+
+      quickDemoLogin(role) {
+        if (role === "admin") {
+          this.loginUser({
+            name: "Master Goldsmith Admin",
+            email: "atelier.admin@aurelia.ch",
+            role: "admin"
+          });
+        } else {
+          this.loginUser({
+            name: "Eleanor Vance",
+            email: "eleanor.vance@luxury.com",
+            role: "customer"
+          });
+        }
+      },
+
+      loginUser(user) {
+        this.currentUser = user;
+        StorageManager.login(user);
+        AureliaApp.showToast(`Authenticated as ${user.name} (${user.role.toUpperCase()})`, "gold");
+        this.renderAppropriateView();
+      },
+
+      handleLogout() {
+        this.currentUser = null;
+        StorageManager.logout();
+        AureliaApp.showToast("Signed out of Aurelia Atelier", "silver");
+        this.renderAppropriateView();
+      },
+
+      switchRole(newRole) {
+        if (this.currentUser) {
+          this.currentUser.role = newRole;
+          StorageManager.login(this.currentUser);
+          AureliaApp.showToast(`Switched view to ${newRole.toUpperCase()}`, "gold");
+          this.renderAppropriateView();
+        }
+      },
+
+      /* ---------------- CUSTOMER DASHBOARD ---------------- */
+      renderCustomerData() {
+        const u = this.currentUser;
+        document.getElementById("cust-dash-name").textContent = u.name;
+        document.getElementById("cust-dash-email").textContent = u.email;
+
+        // Render Orders
+        const orders = StorageManager.getOrders();
+        const ordersList = document.getElementById("customer-orders-list");
+        document.getElementById("cust-kpi-orders").textContent = orders.length;
+
+        ordersList.innerHTML = orders.map(ord => `
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-[var(--border-subtle)] gap-2">
+              <div>
+                <span class="font-serif text-lg font-bold text-[var(--text-primary)]">Order #${ord.id}</span>
+                <span class="text-xs text-[var(--text-muted)] ml-2">• Placed on ${ord.date}</span>
+              </div>
+              <span class="px-3 py-1 text-xs font-semibold rounded ${ord.status === 'Delivered' ? 'bg-emerald-500/15 text-emerald-600' : 'bg-amber-500/15 text-amber-600'}">
+                ${ord.status}
+              </span>
+            </div>
+            <div class="space-y-3">
+              ${ord.items.map(item => `
+                <div class="flex items-center gap-4">
+                  <img src="${item.image}" class="w-14 h-14 object-cover border border-[var(--border-color)]" />
+                  <div class="flex-1 min-w-0 text-xs">
+                    <div class="font-bold text-[var(--text-primary)]">${item.name}</div>
+                    <div class="text-[var(--text-muted)]">${item.metal} • ${item.length} • Qty: ${item.qty}</div>
+                  </div>
+                  <div class="font-bold text-xs text-[var(--text-primary)]">$${(item.price * item.qty).toLocaleString()}</div>
+                </div>
+              `).join('')}
+            </div>
+            <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
+              <span class="text-[var(--text-muted)]">Carrier: <strong>${ord.carrier} (${ord.trackingNumber})</strong></span>
+              <span class="font-bold text-[var(--text-primary)]">Total: $${ord.total.toLocaleString()}</span>
+            </div>
+          </div>
+        `).join('');
+
+        // Render Wishlist
+        const wishlistIds = StorageManager.getWishlist();
+        const products = StorageManager.getProducts();
+        const wishGrid = document.getElementById("customer-wishlist-grid");
+        document.getElementById("cust-kpi-wishlist").textContent = wishlistIds.length;
+
+        wishGrid.innerHTML = wishlistIds.map((id, idx) => {
+          const p = products.find(x => x.id === id);
+          if (!p) return '';
+          return `
+            <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-4 space-y-3 ${idx === 2 ? 'md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full' : ''}">
+              <img src="${p.image}" class="w-full h-40 object-cover" />
+              <div class="font-serif text-base font-bold text-[var(--text-primary)] line-clamp-2 min-h-[3rem] leading-snug">${p.name}</div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-[var(--color-gold)]">$${p.price.toLocaleString()}</span>
+                <button onclick="StorageManager.addToCart('${p.id}', 1); AureliaApp.showToast('Moved to bag', 'gold')" class="px-2.5 py-1 bg-[var(--color-gold)] text-black text-[10px] font-bold uppercase">
+                  Add to Bag
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        // Render Saved Custom Designs
+        const customDesigns = StorageManager.getSavedCustomDesigns();
+        const customContainer = document.getElementById("customer-saved-designs-list");
+        document.getElementById("cust-kpi-custom").textContent = customDesigns.length;
+
+        if (customDesigns.length === 0) {
+          customContainer.innerHTML = `
+            <div class="p-8 text-center text-xs text-[var(--text-muted)] border border-dashed border-[var(--border-color)]">
+              No saved 3D custom designs yet. Visit the <a href="custom-studio.html" class="text-[var(--color-gold)] underline">3D Custom Studio</a> to create and save your personalized necklace.
+            </div>
+          `;
+        } else {
+          customContainer.innerHTML = customDesigns.map(d => `
+            <div class="p-4 bg-[var(--bg-secondary)] border border-[var(--border-color)] flex items-center justify-between">
+              <div>
+                <h5 class="font-serif text-base font-bold text-[var(--text-primary)]">${d.name}</h5>
+                <div class="text-xs text-[var(--text-muted)]">${d.specs}</div>
+                <div class="text-[10px] text-[var(--color-gold)] mt-0.5">Saved on ${d.savedAt}</div>
+              </div>
+              <div class="text-right space-y-1.5">
+                <div class="font-bold text-sm text-[var(--text-primary)]">$${d.price.toLocaleString()}</div>
+                <a href="custom-studio.html" class="inline-block px-3 py-1 btn-luxury-gold text-[10px] font-bold uppercase">Open in 3D</a>
+              </div>
+            </div>
+          `).join('');
+        }
+      },
+
+      switchCustTab(tab) {
+        document.querySelectorAll("#customer-dashboard-container button[id^='cust-tab-btn']").forEach(b => {
+          b.classList.remove("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+          b.classList.add("border-transparent", "text-[var(--text-muted)]");
+        });
+        document.querySelectorAll("#customer-dashboard-container div[id^='cust-pane']").forEach(p => p.classList.add("hidden"));
+
+        document.getElementById(`cust-tab-btn-${tab}`).classList.add("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+        document.getElementById(`cust-tab-btn-${tab}`).classList.remove("border-transparent", "text-[var(--text-muted)]");
+        document.getElementById(`cust-pane-${tab}`).classList.remove("hidden");
+      },
+
+      /* ---------------- ADMIN DASHBOARD ---------------- */
+      renderAdminData() {
+        const products = StorageManager.getProducts();
+        const orders = StorageManager.getOrders();
+        document.getElementById("admin-metric-products").textContent = products.length;
+        document.getElementById("admin-metric-orders").textContent = orders.length;
+
+        // 1. Products Table
+        const prodTable = document.getElementById("admin-products-table-body");
+        prodTable.innerHTML = products.map(p => `
+          <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+            <td class="p-3 flex items-center gap-3">
+              <img src="${p.image}" class="w-10 h-10 object-cover border border-[var(--border-color)]" />
+              <div>
+                <strong class="text-[var(--text-primary)] block truncate max-w-xs font-serif text-sm">${p.name}</strong>
+                <span class="text-[10px] text-[var(--text-muted)]">${p.style}</span>
+              </div>
+            </td>
+            <td class="p-3 font-medium text-[var(--color-gold)]">${p.metalType}</td>
+            <td class="p-3 font-bold text-[var(--text-primary)]">$${p.price.toLocaleString()}</td>
+            <td class="p-3">
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold ${p.inStock ? 'bg-emerald-500/15 text-emerald-600' : 'bg-red-500/15 text-red-600'}">
+                ${p.inStock ? `${p.stockCount} In Vault` : 'Sold Out'}
+              </span>
+            </td>
+            <td class="p-3 text-[var(--color-gold)]">★ ${p.rating} (${p.reviewCount || 0})</td>
+            <td class="p-3 text-right rtl:text-left space-x-2 rtl:space-x-reverse">
+              <button onclick="AuthController.toggleProductStock('${p.id}')" class="text-[11px] text-[var(--color-gold)] underline">
+                Toggle Stock
+              </button>
+              <button onclick="AuthController.deleteProduct('${p.id}')" class="text-[11px] text-red-500 hover:underline">
+                Delete
+              </button>
+            </td>
+          </tr>
+        `).join('');
+
+        // 2. Orders Table
+        const ordersTable = document.getElementById("admin-orders-table-body");
+        ordersTable.innerHTML = orders.map(ord => `
+          <tr class="hover:bg-[var(--bg-secondary)] transition-colors">
+            <td class="p-3 font-bold text-[var(--text-primary)]">#${ord.id}</td>
+            <td class="p-3 text-[var(--text-muted)]">${ord.date}</td>
+            <td class="p-3">
+              <div class="font-bold text-[var(--text-primary)]">${ord.customerName}</div>
+              <div class="text-[10px] text-[var(--text-muted)]">${ord.customerEmail}</div>
+            </td>
+            <td class="p-3 font-bold text-[var(--color-gold)]">$${ord.total.toLocaleString()}</td>
+            <td class="p-3">
+              <span class="px-2 py-0.5 text-[10px] font-bold rounded ${ord.status === 'Delivered' ? 'bg-emerald-500/15 text-emerald-600' : 'bg-amber-500/15 text-amber-600'}">
+                ${ord.status}
+              </span>
+            </td>
+            <td class="p-3">
+              <select onchange="StorageManager.updateOrderStatus('${ord.id}', this.value); AuthController.renderAdminData();" class="bg-[var(--bg-surface)] border border-[var(--border-color)] px-2 py-1 text-[11px]">
+                <option value="Crafting in Atelier" ${ord.status === 'Crafting in Atelier' ? 'selected' : ''}>Crafting in Atelier</option>
+                <option value="In Transit" ${ord.status === 'In Transit' ? 'selected' : ''}>In Transit</option>
+                <option value="Delivered" ${ord.status === 'Delivered' ? 'selected' : ''}>Delivered</option>
+              </select>
+            </td>
+          </tr>
+        `).join('');
+
+        // 3. Inquiries
+        const inqList = document.getElementById("admin-inquiries-list");
+        inqList.innerHTML = AURELIA_DATA.inquiries.map(inq => `
+          <div class="p-5 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <strong class="text-[var(--text-primary)]">${inq.name} (${inq.email})</strong>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold ${inq.status === 'Answered' ? 'bg-emerald-500/15 text-emerald-600' : 'bg-amber-500/15 text-amber-600'}">${inq.status}</span>
+            </div>
+            <div class="font-serif text-sm font-bold text-[var(--color-gold)]">${inq.subject}</div>
+            <p class="text-xs text-[var(--text-secondary)] italic leading-relaxed">"${inq.message}"</p>
+          </div>
+        `).join('');
+      },
+
+      switchAdminTab(tab) {
+        document.querySelectorAll("#admin-dashboard-container button[id^='admin-tab-btn']").forEach(b => {
+          b.classList.remove("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+          b.classList.add("border-transparent", "text-[var(--text-muted)]");
+        });
+        document.querySelectorAll("#admin-dashboard-container div[id^='admin-pane']").forEach(p => p.classList.add("hidden"));
+
+        document.getElementById(`admin-tab-btn-${tab}`).classList.add("border-[var(--color-gold)]", "text-[var(--text-primary)]");
+        document.getElementById(`admin-tab-btn-${tab}`).classList.remove("border-transparent", "text-[var(--text-muted)]");
+        document.getElementById(`admin-pane-${tab}`).classList.remove("hidden");
+      },
+
+      toggleProductStock(id) {
+        const p = StorageManager.getProductById(id);
+        if (p) {
+          StorageManager.updateProduct(id, { inStock: !p.inStock });
+          AureliaApp.showToast(`Updated stock status for ${p.name}`, "gold");
+          this.renderAdminData();
+        }
+      },
+
+      deleteProduct(id) {
+        if (confirm("Are you certain you wish to withdraw this piece from the catalog?")) {
+          StorageManager.deleteProduct(id);
+          AureliaApp.showToast("Product deleted from atelier inventory", "silver");
+          this.renderAdminData();
+        }
+      },
+
+      openAddProductModal() {
+        const modal = document.getElementById("admin-add-product-modal");
+        modal.classList.remove("opacity-0", "pointer-events-none");
+      },
+
+      closeAddProductModal() {
+        const modal = document.getElementById("admin-add-product-modal");
+        modal.classList.add("opacity-0", "pointer-events-none");
+      },
+
+      handleAddProduct(e) {
+        e.preventDefault();
+        const name = document.getElementById("new-prod-name").value;
+        const metal = document.getElementById("new-prod-metal").value;
+        const price = parseFloat(document.getElementById("new-prod-price").value);
+        const style = document.getElementById("new-prod-style").value;
+        const stockCount = parseInt(document.getElementById("new-prod-stock").value);
+        const image = document.getElementById("new-prod-img").value;
+        const description = document.getElementById("new-prod-desc").value;
+
+        const newP = {
+          id: "custom-" + Date.now(),
+          name,
+          subtitle: `${metal === 'gold' ? '18K Champagne Gold' : '925 Sterling Silver'} Atelier Creation`,
+          metal,
+          metalType: metal === 'gold' ? '18K Champagne Gold' : '925 Sterling Silver',
+          style,
+          length: '18"',
+          price,
+          rating: 5.0,
+          reviewCount: 1,
+          inStock: stockCount > 0,
+          stockCount,
+          isBestseller: false,
+          isNew: true,
+          image,
+          gallery: [image],
+          description,
+          details: {
+            karat: metal === 'gold' ? '18K Solid Gold' : '925 Sterling Silver',
+            stone: 'Lab-Grown Solitaire',
+            chainLength: '18 inches',
+            clasp: 'Lobster Claw',
+            weight: '6.4g',
+            origin: 'Geneva Atelier'
+          }
+        };
+
+        StorageManager.addProduct(newP);
+        this.closeAddProductModal();
+        AureliaApp.showToast(`Published ${name} to store catalog`, "gold");
+        this.renderAdminData();
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      AuthController.init();
+    });
+  </script>
+</body>
+</html>

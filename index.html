@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURELIA | Haute Joaillerie & Fine Gold & Silver Necklaces</title>
+  <meta name="description" content="Discover Aurelia's master-crafted 18K solid gold and 925 sterling silver necklaces. Featuring floating solitaires, sculptural chokers, and bespoke personalized jewelry forged in Geneva." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Tailwind CSS 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            champagne: '#C6A15B',
+            charcoal: '#191816',
+            ivory: '#FAF7F0',
+            silver: '#C8CCD0',
+            beige: '#E8DFD0'
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS Library CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased transition-colors duration-400">
+
+  <!-- GLOBAL HEADER (Hydrated by app.js) -->
+  <div id="aurelia-header"></div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: LUXURY 3D HERO EXPERIENCE
+         ========================================================================= -->
+    <section id="hero-experience" class="relative min-h-[92vh] flex items-center overflow-hidden bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-400 -mt-20 pt-20">
+      <!-- Atmospheric Background Lighting & Architecture -->
+      <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <!-- Atelier Architectural Salon Image (Unique, unrepeated) -->
+        <img
+          src="images/hero-atelier-bg.jpg"
+          alt="Aurelia Private Jewelry Salon Architecture"
+          class="w-full h-full object-cover object-center scale-105 opacity-25 dark:opacity-15 transition-opacity duration-700 select-none filter blur-[0.5px]"
+        />
+        <!-- Atmospheric Vignettes & Gradient Blends -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/80 to-[var(--bg-primary)]/40 rtl:bg-gradient-to-l"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)]/70"></div>
+        
+        <!-- Luxury Caustic Lighting & Glow -->
+        <div class="hero-caustic-light w-[650px] h-[650px] top-1/4 right-1/4 opacity-40"></div>
+        <div class="absolute -bottom-20 -left-20 w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle,rgba(200,204,208,0.12)_0%,transparent_70%)] filter blur-3xl"></div>
+        <!-- Subtle luxury mesh grid pattern -->
+        <div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#C6A15B_1px,transparent_1px)] [background-size:28px_28px]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Editorial Copy & CTA (Staggered Text Reveal) -->
+          <div class="lg:col-span-7 space-y-7 text-left rtl:text-right" data-aos="fade-up" data-aos-duration="1000">
+            <div class="inline-flex items-center gap-2 px-3 py-1 border border-[#C6A15B]/30 bg-[#C6A15B]/10 rounded-full text-[11px] uppercase tracking-[0.25em] text-[var(--color-gold)] font-medium">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#C6A15B] animate-ping"></span>
+              The 2026 High Jewelry Haute Collection
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight text-[var(--text-primary)]">
+              Elegance That Lasts <br />
+              <span class="text-gold-gradient italic font-normal">Beyond Time.</span>
+            </h1>
+
+            <p class="text-sm sm:text-base text-[var(--text-secondary)] max-w-xl font-light leading-relaxed">
+              Curated for discerning collectors, Aurelia unites ancient Valenza gold-forging with Swiss laser precision. Explore fluid 18K solid gold silhouettes and crisp 925 sterling silver chokers designed to become part of your personal legacy.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3" data-aos="fade-up" data-aos-delay="200">
+              <a href="shop.html?metal=gold" class="w-full sm:w-56 h-14 btn-luxury-gold text-xs font-bold uppercase tracking-[0.25em] flex items-center justify-center gap-3 group whitespace-nowrap">
+                <span>Explore Gold</span>
+                <svg class="w-4 h-4 rtl-mirror transition-transform group-hover:translate-x-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+              <a href="shop.html?metal=silver" class="w-full sm:w-56 h-14 btn-luxury-silver text-xs font-bold uppercase tracking-[0.25em] flex items-center justify-center gap-3 group whitespace-nowrap">
+                <span>Discover Silver</span>
+                <svg class="w-4 h-4 rtl-mirror transition-transform group-hover:translate-x-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+
+            <!-- Trust Metas -->
+            <div class="pt-8 border-t border-[var(--border-subtle)] grid grid-cols-3 gap-6 text-xs text-[var(--text-muted)] max-w-lg">
+              <div>
+                <div class="font-serif text-xl font-bold text-[var(--text-primary)]">18K & 925</div>
+                <div class="text-[10px] uppercase tracking-wider mt-0.5">Assayed In Geneva</div>
+              </div>
+              <div>
+                <div class="font-serif text-xl font-bold text-[var(--text-primary)]">VVS1</div>
+                <div class="text-[10px] uppercase tracking-wider mt-0.5">Conflict-Free Gems</div>
+              </div>
+              <div>
+                <div class="font-serif text-xl font-bold text-[var(--text-primary)]">Lifetime</div>
+                <div class="text-[10px] uppercase tracking-wider mt-0.5">Atelier Warranty</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Realistic Floating 3D Necklace Presentation -->
+          <div class="lg:col-span-5 flex justify-center perspective-container" data-aos="zoom-in" data-aos-duration="1200">
+            <div id="hero-3d-necklace-container" class="relative w-full max-w-[500px] xl:max-w-[540px] aspect-square flex items-center justify-center hero-3d-stage">
+              
+              <!-- Orbital Halo Rings -->
+              <div class="absolute inset-0 border border-[#C6A15B]/20 rounded-full animate-spin [animation-duration:40s]"></div>
+              <div class="absolute inset-8 border border-[#C8CCD0]/15 rounded-full animate-spin [animation-duration:28s] [animation-direction:reverse]"></div>
+
+              <!-- Floating Necklace Image with Interactive Mouse Tilt -->
+              <div id="hero-floating-element" class="relative z-10 hero-necklace-float preserve-3d cursor-pointer">
+                <img
+                  id="hero-main-necklace"
+                  src="images/aurelia-solitaire-gold.jpg"
+                  alt="Aurelia 18K Solid Gold Solitaire Diamond Necklace"
+                  class="w-80 sm:w-[390px] xl:w-[440px] aspect-square rounded-2xl object-cover object-center shadow-2xl border border-[var(--color-gold)]/30"
+                />
+                
+                <!-- Floating Spec Chip (3D Layer) -->
+                <div class="absolute -bottom-4 -left-4 glass-card p-3.5 sm:p-4 text-left rtl:text-right" style="transform: translateZ(40px);">
+                  <div class="text-[10px] uppercase tracking-widest text-[var(--color-gold)] font-bold">Featured Atelier Piece</div>
+                  <div class="font-serif text-sm sm:text-base font-bold text-[var(--text-primary)]">The Aurelia Solitaire</div>
+                  <div class="text-xs text-[var(--color-gold)] font-semibold mt-0.5">$1,850 • 18K Champagne Gold</div>
+                </div>
+
+                <!-- Floating Silver Badge (3D Layer) -->
+                <div class="absolute -top-3 -right-3 glass-card p-2.5 sm:p-3 text-center" style="transform: translateZ(30px);">
+                  <span class="text-[9px] uppercase tracking-wider text-[var(--text-secondary)] font-semibold">100% Recycled Silver</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: DISCOVER SIGNATURE COLLECTIONS (Asymmetric Editorial Layout)
+         ========================================================================= -->
+    <section id="signature-collections" class="py-24 bg-[var(--bg-primary)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div data-aos="fade-right">
+            <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Curated Silhouettes</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 text-[var(--text-primary)]">
+              Discover Signature Collections
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)] max-w-md font-light leading-relaxed" data-aos="fade-left">
+            From the warmth of 18K Champagne Gold to the crisp modernity of rhodium-plated sterling silver, explore four distinct aesthetic movements.
+          </p>
+        </div>
+
+        <!-- Uniform Editorial Grid (4 equal-size Collection cards) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
+          
+          <!-- Collection 1: Gold Necklaces -->
+          <div class="group relative overflow-hidden bg-[var(--bg-secondary)] border border-[var(--border-color)] shine-effect h-[420px] flex flex-col justify-end p-8 sm:p-10 tilt-card" data-aos="fade-up">
+            <img
+              src="images/aurelia-solitaire-gold.jpg"
+              alt="18K Gold Necklaces Collection"
+              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+            
+            <div class="relative z-10 text-white space-y-3 card-inner-3d">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ECC880] font-semibold">18K Solid Gold</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold">Gold Necklaces Atelier</h3>
+              <p class="text-xs sm:text-sm text-[#D4CDC3] max-w-md leading-relaxed font-light">
+                Infused with our signature champagne tint, these hand-linked Venetian chains and diamond solitaires catch ambient light with effortless poise.
+              </p>
+              <div class="pt-2">
+                <a href="shop.html?metal=gold" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#ECC880] hover:text-white transition-colors">
+                  <span>Explore Gold Silhouettes</span>
+                  <svg class="w-4 h-4 rtl-mirror" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collection 2: Silver Necklaces -->
+          <div class="group relative overflow-hidden bg-[var(--bg-secondary)] border border-[var(--border-color)] shine-effect h-[420px] flex flex-col justify-end p-8 sm:p-10 tilt-card" data-aos="fade-up" data-aos-delay="150">
+            <img
+              src="images/seraphina-silver-choker.jpg"
+              alt="925 Sterling Silver Necklaces"
+              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+            
+            <div class="relative z-10 text-white space-y-3 card-inner-3d">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#C8CCD0] font-semibold">925 Sterling Silver</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold">Sculpted Silver Necklaces</h3>
+              <p class="text-xs sm:text-sm text-[#D4CDC3] max-w-md leading-relaxed font-light">
+                Architectural contours, liquid woven mesh, and mirror-finish chokers sealed with anti-tarnish rhodium.
+              </p>
+              <div class="pt-2">
+                <a href="shop.html?metal=silver" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#C8CCD0] hover:text-white transition-colors">
+                  <span>View Silver Pieces</span>
+                  <svg class="w-4 h-4 rtl-mirror" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collection 3: Pendant Necklaces -->
+          <div class="group relative overflow-hidden bg-[var(--bg-secondary)] border border-[var(--border-color)] shine-effect h-[420px] flex flex-col justify-end p-8 sm:p-10 tilt-card" data-aos="fade-up" data-aos-delay="200">
+            <img
+              src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=80"
+              alt="Pendant Necklaces and Medallions"
+              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+            
+            <div class="relative z-10 text-white space-y-3 card-inner-3d">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ECC880] font-semibold">Talismans & Keepsakes</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold">Pendant Necklaces</h3>
+              <p class="text-xs sm:text-sm text-[#D4CDC3] max-w-md leading-relaxed font-light">
+                Celestial compasses, Australian baroque pearls, and solitaire gems crafted for personal storytelling.
+              </p>
+              <div class="pt-2">
+                <a href="shop.html?style=pendant" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#ECC880] hover:text-white transition-colors">
+                  <span>Discover Pendants</span>
+                  <svg class="w-4 h-4 rtl-mirror" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collection 4: Layered Necklaces -->
+          <div class="group relative overflow-hidden bg-[var(--bg-secondary)] border border-[var(--border-color)] shine-effect h-[420px] flex flex-col justify-end p-8 sm:p-10 tilt-card" data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="images/celeste-layered-cascade.jpg"
+              alt="Layered Necklaces Cascades"
+              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+            
+            <div class="relative z-10 text-white space-y-3 card-inner-3d">
+              <span class="text-xs uppercase tracking-[0.25em] text-[#ECC880] font-semibold">Tangle-Free Tiers</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold">Layered Necklaces</h3>
+              <p class="text-xs sm:text-sm text-[#D4CDC3] max-w-md leading-relaxed font-light">
+                Master the golden ratio of necklace tiering. Calibrated lengths from 15" to 22" engineered with unified barrel clasps.
+              </p>
+              <div class="pt-2">
+                <a href="shop.html?style=layered" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#ECC880] hover:text-white transition-colors">
+                  <span>Explore Layered Sets</span>
+                  <svg class="w-4 h-4 rtl-mirror" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: BESTSELLING NECKLACES (Interactive 3D Product Cards)
+         ========================================================================= -->
+    <section id="bestselling-necklaces" class="py-24 bg-[var(--bg-secondary)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">The Atelier Hall of Fame</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[var(--text-primary)]">Bestselling Necklaces</h2>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)] font-light leading-relaxed">
+            Our most revered creations, celebrated by fine jewelry connoisseurs worldwide for their exquisite balance and peerless luster.
+          </p>
+        </div>
+
+        <!-- Product Grid (Dynamic Top 4 Bestsellers) -->
+        <div id="home-bestsellers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Populated by JavaScript below with 3D tilt effects, wishlist controls, and quick view -->
+        </div>
+
+        <div class="text-center mt-14" data-aos="fade-up">
+          <a href="shop.html" class="inline-block px-10 py-4 btn-luxury-ghost text-xs font-bold uppercase tracking-[0.25em]">
+            View Complete Necklace Atelier (12 Pieces)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: BRAND STORY, TRUST AND FOOTER (Combined Final Section)
+         ========================================================================= -->
+    <section id="brand-story-trust-footer" class="bg-[var(--bg-primary)] pt-24 transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        
+        <!-- Craftsmanship Story Split -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+          <div class="lg:col-span-6 relative" data-aos="fade-right">
+            <div class="relative overflow-hidden border border-[var(--border-color)] shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1000&q=80"
+                alt="Aurelia Master Goldsmith at Work in Geneva"
+                class="w-full h-[450px] object-cover object-center"
+              />
+              <div class="absolute bottom-4 left-4 bg-[var(--bg-surface)]/90 backdrop-blur-md border border-[var(--border-color)] p-4 max-w-xs text-xs">
+                <div class="text-[var(--color-gold)] font-bold uppercase tracking-wider text-[10px]">Swiss Assay Certified</div>
+                <div class="font-serif text-sm font-bold text-[var(--text-primary)] mt-0.5">Master Goldsmiths Atelier</div>
+                <div class="text-[var(--text-muted)] text-[11px] mt-0.5">Over 32 hours of manual polishing per piece</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 space-y-6 text-left rtl:text-right" data-aos="fade-left">
+            <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">The Aurelia Philosophy</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight text-[var(--text-primary)]">
+              Crafted by Hand, <br />
+              <span class="italic font-normal">Revered Across Generations.</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+              Founded in Geneva in 1994, Maison Aurelia was born out of reverence for the timeless neckpiece. We believe a fine necklace is not merely an ornament—it is an intimate companion that marks milestones, reflects personal sovereignty, and gathers the warmth of the wearer’s skin.
+            </p>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+              We exclusively utilize certified 100% recycled 18K solid gold, conflict-free VVS diamonds, and sustainably cultured keshi pearls. Every chain link is individually soldered and hand-assayed to guarantee zero pinches and lifelong durability.
+            </p>
+            <div class="pt-2">
+              <a href="custom-studio.html" class="inline-flex items-center gap-3 px-6 py-3.5 btn-luxury-gold text-xs font-bold uppercase tracking-widest">
+                <span>Commission Your Custom Necklace</span>
+                <svg class="w-4 h-4 rtl-mirror" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Trust Badges -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-12 border-y border-[var(--border-color)] mb-20" data-aos="fade-up">
+          <div class="text-center p-4 space-y-2">
+            <div class="w-12 h-12 mx-auto rounded-full bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/30 flex items-center justify-center text-[var(--color-gold)]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h4 class="font-serif text-base font-bold text-[var(--text-primary)]">100% Ethical Metals</h4>
+            <p class="text-[11px] text-[var(--text-muted)]">Hallmarked recycled 18K solid gold & 925 sterling silver</p>
+          </div>
+          <div class="text-center p-4 space-y-2">
+            <div class="w-12 h-12 mx-auto rounded-full bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/30 flex items-center justify-center text-[var(--color-gold)]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h4 class="font-serif text-base font-bold text-[var(--text-primary)]">Signature Presentation</h4>
+            <p class="text-[11px] text-[var(--text-muted)]">Silk-lined velvet box, wax seal authenticity certificate</p>
+          </div>
+          <div class="text-center p-4 space-y-2">
+            <div class="w-12 h-12 mx-auto rounded-full bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/30 flex items-center justify-center text-[var(--color-gold)]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h4 class="font-serif text-base font-bold text-[var(--text-primary)]">Insured Express Delivery</h4>
+            <p class="text-[11px] text-[var(--text-muted)]">Complimentary courier with private tamper-proof dispatch</p>
+          </div>
+          <div class="text-center p-4 space-y-2">
+            <div class="w-12 h-12 mx-auto rounded-full bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/30 flex items-center justify-center text-[var(--color-gold)]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            </div>
+            <h4 class="font-serif text-base font-bold text-[var(--text-primary)]">Atelier Lifetime Care</h4>
+            <p class="text-[11px] text-[var(--text-muted)]">Free annual ultrasonic cleaning and prong inspection</p>
+          </div>
+        </div>
+
+        <!-- Curated Customer Testimonials -->
+        <div class="mb-8 text-center space-y-2">
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Client Voices</span>
+          <h3 class="font-serif text-2xl sm:text-4xl font-bold text-[var(--text-primary)]">Words from Connoisseurs</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="p-8 bg-[var(--bg-secondary)] border border-[var(--border-color)] flex flex-col gap-4 text-left rtl:text-right" data-aos="fade-up">
+            <div class="flex text-[#C6A15B]">★★★★★</div>
+            <p class="font-serif text-base italic text-[var(--text-primary)]">
+              "The Aurelia Solitaire is nothing short of breathtaking. The Champagne Gold alloy has an ethereal warmth that compliments both evening silks and simple linen shirts."
+            </p>
+            <div class="mt-auto pt-2 border-t border-[var(--border-subtle)]">
+              <div class="text-xs font-bold text-[var(--text-primary)]">Lady Evelyn Montague</div>
+              <div class="text-[10px] text-[var(--color-gold)] uppercase tracking-wider">London, United Kingdom</div>
+            </div>
+          </div>
+
+          <div class="p-8 bg-[var(--bg-secondary)] border border-[var(--border-color)] flex flex-col gap-4 text-left rtl:text-right" data-aos="fade-up" data-aos-delay="150">
+            <div class="flex text-[#C6A15B]">★★★★★</div>
+            <p class="font-serif text-base italic text-[var(--text-primary)]">
+              "I commissioned a custom engraved silver medallion for our twentieth anniversary. The interactive 3D studio preview was remarkably accurate to the finished masterpiece."
+            </p>
+            <div class="mt-auto pt-2 border-t border-[var(--border-subtle)]">
+              <div class="text-xs font-bold text-[var(--text-primary)]">Henri De La Tour</div>
+              <div class="text-[10px] text-[var(--color-gold)] uppercase tracking-wider">Geneva, Switzerland</div>
+            </div>
+          </div>
+
+          <div class="p-8 bg-[var(--bg-secondary)] border border-[var(--border-color)] flex flex-col gap-4 text-left rtl:text-right md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex text-[#C6A15B]">★★★★★</div>
+            <p class="font-serif text-base italic text-[var(--text-primary)]">
+              "The triple layered Céleste necklace solved my biggest pet peeve—it never tangles! The weight and clasp engineering demonstrate true high-jewelry mastery."
+            </p>
+            <div class="mt-auto pt-2 border-t border-[var(--border-subtle)]">
+              <div class="text-xs font-bold text-[var(--text-primary)]">Camilla Rostova</div>
+              <div class="text-[10px] text-[var(--color-gold)] uppercase tracking-wider">Milan, Italy</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Combined Shared Global Footer -->
+    <div id="aurelia-footer"></div>
+  </main>
+
+  <!-- Interactive Overlays (Search, Cart, Wishlist, QuickView, Checkout) -->
+  <div id="aurelia-interactive-overlays"></div>
+
+  <!-- AOS CDN Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Data & Application Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Homepage Dynamic Hydration & 3D Mouse Parallax -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Render Top 4 Bestsellers dynamically
+      const grid = document.getElementById("home-bestsellers-grid");
+      if (grid) {
+        const products = StorageManager.getProducts();
+        const bestsellers = products.filter(p => p.isBestseller).slice(0, 4);
+
+        grid.innerHTML = bestsellers.map((p, idx) => `
+          <div class="tilt-card group bg-[var(--bg-surface)] border border-[var(--border-color)] flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="${idx * 100}">
+            <!-- Image & Badges -->
+            <div class="relative aspect-square overflow-hidden bg-[var(--bg-secondary)]">
+              <img
+                src="${p.image}"
+                alt="${p.name}"
+                class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              />
+
+              <!-- Metal & Bestseller Badges -->
+              <div class="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+                <span class="px-2 py-0.5 text-[9px] uppercase font-bold tracking-widest ${p.metal === 'gold' ? 'bg-[#ECC880] text-black' : 'bg-[#E4E7EB] text-black'} shadow-sm">
+                  ${p.metal === 'gold' ? '18K Gold' : '925 Silver'}
+                </span>
+                <span class="px-2 py-0.5 text-[9px] uppercase font-bold tracking-widest bg-black/80 text-white">
+                  Bestseller
+                </span>
+              </div>
+
+              <!-- Wishlist Control -->
+              <button
+                onclick="event.stopPropagation(); const inWish = StorageManager.toggleWishlist('${p.id}'); AureliaApp.showToast(inWish ? 'Added to Wishlist' : 'Removed from Wishlist', '${p.metal}'); this.classList.toggle('text-red-500', inWish);"
+                class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[var(--bg-surface)]/90 backdrop-blur-sm border border-[var(--border-color)] flex items-center justify-center text-[var(--text-muted)] hover:text-red-500 transition-colors z-10 ${StorageManager.isInWishlist(p.id) ? 'text-red-500' : ''}"
+                aria-label="Save to Wishlist"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              </button>
+
+              <!-- Quick View Button Overlay -->
+              <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/70 to-transparent flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                <button
+                  onclick="AureliaApp.openQuickView('${p.id}')"
+                  class="w-full py-2 bg-[var(--bg-surface)] text-[var(--text-primary)] text-[10px] font-bold uppercase tracking-widest hover:bg-[var(--color-gold)] hover:text-black transition-colors"
+                >
+                  Quick View
+                </button>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+              <div>
+                <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-medium">${p.subtitle || p.metalType}</div>
+                <h4 class="font-serif text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-gold)] transition-colors mt-0.5 line-clamp-2 min-h-[3rem] leading-snug max-w-[210px]">
+                  <a href="product.html?id=${p.id}">${p.name}</a>
+                </h4>
+              </div>
+
+              <!-- Price & Rating -->
+              <div class="pt-2 border-t border-[var(--border-subtle)] flex items-center justify-between">
+                <div>
+                  <span class="font-serif text-lg font-bold text-[var(--text-primary)]">$${p.price.toLocaleString()}</span>
+                  ${p.originalPrice ? `<span class="text-xs line-through text-[var(--text-muted)] ml-1.5">$${p.originalPrice.toLocaleString()}</span>` : ''}
+                </div>
+                <div class="text-[11px] text-[var(--color-gold)] flex items-center gap-1 font-semibold">
+                  <span>★</span>
+                  <span>${p.rating}</span>
+                  <span class="text-[var(--text-muted)]">(${p.reviewCount})</span>
+                </div>
+              </div>
+
+              <!-- Action: Add to Cart -->
+              <button
+                onclick="StorageManager.addToCart('${p.id}', 1); AureliaApp.showToast('Added ${p.name} to bag', '${p.metal}')"
+                class="w-full py-2.5 btn-luxury-ghost text-[10px] font-bold uppercase tracking-widest hover:bg-[var(--color-gold)] hover:text-black transition-colors"
+              >
+                Add to Bag
+              </button>
+            </div>
+          </div>
+        `).join('');
+
+        // Re-initialize 3D tilt
+        AureliaApp.init3DTilt();
+      }
+
+      // 2. Interactive Hero 3D Parallax on Mouse Move (Throttled with rAF)
+      const heroStage = document.getElementById("hero-experience");
+      const floatingElement = document.getElementById("hero-floating-element");
+      if (heroStage && floatingElement) {
+        let ticking = false;
+        let rect = heroStage.getBoundingClientRect();
+        window.addEventListener("resize", () => { rect = heroStage.getBoundingClientRect(); }, { passive: true });
+
+        heroStage.addEventListener("mousemove", (e) => {
+          const mouseX = e.clientX - rect.left - rect.width / 2;
+          const mouseY = e.clientY - rect.top - rect.height / 2;
+
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              const rotateY = (mouseX / rect.width) * 16;
+              const rotateX = -(mouseY / rect.height) * 16;
+              floatingElement.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+
+        heroStage.addEventListener("mouseleave", () => {
+          floatingElement.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURELIA | 3D Bespoke Custom Jewelry Studio & Atelier</title>
+  <meta name="description" content="Design your one-of-a-kind fine necklace with Aurelia's interactive 3D Custom Studio. Forge bespoke 18K solid gold and 925 sterling silver heirlooms with custom pendants, lengths, and Geneva laser engravings." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Tailwind CSS 3 CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            champagne: '#C6A15B',
+            charcoal: '#191816',
+            ivory: '#FAF7F0',
+            silver: '#C8CCD0',
+            beige: '#E8DFD0'
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS Library CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased transition-colors duration-400">
+
+  <!-- GLOBAL HEADER (Hydrated by app.js) -->
+  <div id="aurelia-header"></div>
+
+  <main>
+    <!-- =========================================================================
+         SECTION 1: HERO EXPERIENCE - THE BESPOKE ATELIER
+         ========================================================================= -->
+    <section id="custom-hero" class="relative min-h-[70vh] flex items-center overflow-hidden bg-[var(--bg-primary)] transition-colors duration-400 -mt-20 pt-28 pb-16 border-b border-[var(--border-subtle)]">
+      <!-- Ambient Lighting -->
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div class="hero-caustic-light w-[600px] h-[600px] top-1/4 right-1/4 opacity-30"></div>
+        <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(198,161,91,0.12)_0%,transparent_70%)] filter blur-3xl"></div>
+        <div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#C6A15B_1px,transparent_1px)] [background-size:28px_28px]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+        <div class="max-w-3xl mx-auto space-y-6" data-aos="fade-up" data-aos-duration="900">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#C6A15B]/30 bg-[#C6A15B]/10 rounded-full text-[11px] uppercase tracking-[0.25em] text-[var(--color-gold)] font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#C6A15B] animate-ping"></span>
+            Geneva & Valenza Haute Atelier
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight text-[var(--text-primary)]">
+            Architect Of Your <br />
+            <span class="text-gold-gradient italic font-normal">Personal Heirloom.</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-[var(--text-secondary)] font-light leading-relaxed max-w-2xl mx-auto">
+            Co-create with Aurelia's master goldsmiths. Select your solid 18K gold or 925 sterling silver silhouette, sculpt fluid chain weaves, curate ethical VVS1 talisman pendants, and engrave indelible memories in real-time 3D.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-2">
+            <a href="#interactive-customizer" class="w-full sm:w-64 h-14 btn-luxury-gold text-xs font-bold uppercase tracking-[0.25em] flex items-center justify-center gap-2 whitespace-nowrap">
+              <span>Start 3D Configuration</span>
+              <svg class="w-4 h-4 rtl-mirror shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+            <a href="#atelier-journey" class="w-full sm:w-64 h-14 btn-luxury-ghost text-xs font-bold uppercase tracking-[0.25em] flex items-center justify-center whitespace-nowrap">
+              <span>The Craftsmanship Process</span>
+            </a>
+          </div>
+
+          <!-- Trust Pillars -->
+          <div class="pt-10 border-t border-[var(--border-subtle)] grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-[var(--text-muted)]">
+            <div>
+              <div class="font-serif text-lg font-bold text-[var(--text-primary)]">Geneva Assay</div>
+              <div class="text-[10px] uppercase tracking-wider mt-0.5">Official Hallmark Stamp</div>
+            </div>
+            <div>
+              <div class="font-serif text-lg font-bold text-[var(--text-primary)]">VVS1 Diamonds</div>
+              <div class="text-[10px] uppercase tracking-wider mt-0.5">Conflict-Free Origin</div>
+            </div>
+            <div>
+              <div class="font-serif text-lg font-bold text-[var(--text-primary)]">Complimentary</div>
+              <div class="text-[10px] uppercase tracking-wider mt-0.5">Laser Micro-Engraving</div>
+            </div>
+            <div>
+              <div class="font-serif text-lg font-bold text-[var(--text-primary)]">Lifetime Atelier</div>
+              <div class="text-[10px] uppercase tracking-wider mt-0.5">Maintenance & Resizing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: INTERACTIVE 3D CUSTOMIZER STUDIO (Live Configurator)
+         ========================================================================= -->
+    <section id="interactive-customizer" class="py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-color)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Live 3D Atelier Workspace</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[var(--text-primary)]">
+            Compose Your Necklace
+          </h2>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)] font-light leading-relaxed">
+            Every selection dynamically renders on the interactive mannequin stage below with instant price calibration.
+          </p>
+        </div>
+
+        <!-- Custom Studio Interactive Workspace -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left: Real-Time 3D Rotating Preview Stage (Spans 6 cols) -->
+          <div class="lg:col-span-6 sticky top-28 space-y-4" data-aos="fade-right">
+            
+            <div class="relative bg-[#151412] border border-[var(--border-color)] overflow-hidden rounded-none shadow-2xl p-8 flex flex-col items-center justify-center min-h-[500px] studio-stage">
+              
+              <!-- Ambient Studio Light Behind Stage -->
+              <div id="studio-ambient-glow" class="absolute w-72 h-72 rounded-full bg-[#C6A15B]/20 filter blur-3xl pointer-events-none transition-all duration-500"></div>
+
+              <!-- 3D Rotation Controls -->
+              <div class="absolute top-4 right-4 z-20 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 border border-white/10 text-white text-[11px]">
+                <button type="button" onclick="CustomStudio.rotateAngle(-25)" class="hover:text-[var(--color-gold)] transition-colors">⟲ Rotate Left</button>
+                <span>|</span>
+                <button type="button" onclick="CustomStudio.rotateAngle(25)" class="hover:text-[var(--color-gold)] transition-colors">Rotate Right ⟳</button>
+              </div>
+
+              <!-- Badge for 3D Interactive Stage -->
+              <div class="absolute top-4 left-4 z-20 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 border border-[#C6A15B]/30 text-[var(--color-gold)] text-[10px] uppercase font-bold tracking-widest">
+                <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-gold)] animate-pulse"></span>
+                Interactive 3D Stage
+              </div>
+
+              <!-- Real-time Interactive Canvas/Necklace Visualization -->
+              <div id="studio-3d-model" class="studio-model relative w-72 h-72 flex items-center justify-center preserve-3d transition-transform duration-500">
+                
+                <!-- Layer 1: Bust Mannequin Contour -->
+                <svg class="w-64 h-64 text-white/5 absolute" viewBox="0 0 200 200" fill="currentColor">
+                  <path d="M100 20 C60 20, 40 60, 20 120 C10 150, 0 190, 0 200 L200 200 C200 190, 190 150, 180 120 C160 60, 140 20, 100 20 Z"/>
+                </svg>
+
+                <!-- Layer 2: Interactive SVG Chain Weave -->
+                <svg id="studio-chain-svg" class="w-56 h-56 relative z-10 filter drop-shadow-md" viewBox="0 0 200 200">
+                  <!-- Dynamic Chain Path with metal stroke color -->
+                  <path
+                    id="svg-chain-path"
+                    d="M 40 40 Q 100 130 160 40"
+                    fill="none"
+                    stroke="#C6A15B"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-dasharray="8 3"
+                    class="transition-all duration-300"
+                  />
+                </svg>
+
+                <!-- Layer 3: Pendant & Engraving Drop -->
+                <div id="studio-pendant-layer" class="absolute top-[108px] z-20 flex flex-col items-center cursor-pointer transition-all duration-300" style="transform: translateZ(35px);">
+                  <div id="pendant-visual-shape" class="w-14 h-14 rounded-full border-2 border-[#C6A15B] bg-[#C6A15B]/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-300">
+                    <span id="pendant-engraving-preview" class="font-serif text-sm font-bold text-white tracking-widest uppercase">
+                      AV
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Live Configuration Specs Overlay -->
+              <div class="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between text-xs bg-black/85 backdrop-blur-md p-3.5 border border-white/10 text-[#D4CDC3]">
+                <div>
+                  <span id="studio-spec-summary" class="font-bold text-white">18K Champagne Gold • 18" Venetian Chain</span>
+                  <div id="studio-engraving-label" class="text-[10px] text-[var(--color-gold)] mt-0.5">Engraved: "AV" (Roman Serif) • Velvet Monogram Box</div>
+                </div>
+                <div class="text-right">
+                  <div class="text-[10px] uppercase text-[var(--text-muted)]">Live Estimate</div>
+                  <div id="studio-live-price" class="font-serif text-xl font-bold text-[var(--color-gold)]">$1,250</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Save Design & Add to Cart Controls -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <button
+                type="button"
+                onclick="CustomStudio.saveDesign()"
+                class="py-3.5 px-4 btn-luxury-ghost text-xs font-bold uppercase tracking-wider sm:tracking-widest"
+              >
+                Save to Wishlist
+              </button>
+              <button
+                type="button"
+                onclick="CustomStudio.addToCart()"
+                class="py-3.5 px-4 btn-luxury-gold text-xs font-bold uppercase tracking-wider sm:tracking-widest"
+              >
+                Add Custom Piece to Bag
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Right: Interactive Personalization Controls (Spans 6 cols) -->
+          <div class="lg:col-span-6 bg-[var(--bg-surface)] border border-[var(--border-color)] p-6 sm:p-8 space-y-7 shadow-sm text-left rtl:text-right" data-aos="fade-left">
+            
+            <!-- Step 1: Base Metal -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">1. Select Precious Metal</span>
+                <span id="cfg-metal-val" class="text-[var(--color-gold)] font-semibold">18K Champagne Gold ($850 base)</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onclick="CustomStudio.setMetal('gold', 850)"
+                  id="studio-metal-gold"
+                  class="p-3 border-2 border-[var(--color-gold)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-3 transition-colors"
+                >
+                  <span class="w-4 h-4 rounded-full bg-[#C6A15B] border border-black/30"></span>
+                  <div>
+                    <div>18K Champagne Gold</div>
+                    <div class="text-[10px] text-[var(--text-muted)] font-normal">Assayed in Geneva</div>
+                  </div>
+                </button>
+                <button
+                  type="button"
+                  onclick="CustomStudio.setMetal('silver', 420)"
+                  id="studio-metal-silver"
+                  class="p-3 border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-3 hover:border-[var(--color-silver)] transition-colors"
+                >
+                  <span class="w-4 h-4 rounded-full bg-[#C8CCD0] border border-black/30"></span>
+                  <div>
+                    <div>925 Sterling Silver</div>
+                    <div class="text-[10px] text-[var(--text-muted)] font-normal">Rhodium Dipped</div>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Chain Silhouette Weave -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">2. Chain Style Weave</span>
+                <span id="cfg-chain-val" class="text-[var(--text-muted)] font-semibold">Venetian Box (+0)</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <button type="button" onclick="CustomStudio.setChain('box', 0, 'Venetian Box')" id="chain-opt-box" class="chain-btn p-2.5 border-2 border-[var(--color-gold)] bg-[var(--bg-secondary)] text-center font-bold">Box Link</button>
+                <button type="button" onclick="CustomStudio.setChain('figaro', 150, 'Italian Figaro')" id="chain-opt-figaro" class="chain-btn p-2.5 border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] text-center font-medium">Figaro (+150)</button>
+                <button type="button" onclick="CustomStudio.setChain('snake', 200, 'Herringbone Snake')" id="chain-opt-snake" class="chain-btn p-2.5 border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] text-center font-medium">Snake (+200)</button>
+                <button type="button" onclick="CustomStudio.setChain('rope', 120, 'Diamond-Cut Rope')" id="chain-opt-rope" class="chain-btn p-2.5 border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] text-center font-medium">Rope (+120)</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Chain Length -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">3. Length Proportions</span>
+                <span id="cfg-length-val" class="text-[var(--text-muted)] font-semibold">18" Princess</span>
+              </div>
+              <div class="grid grid-cols-4 gap-2 text-xs font-bold">
+                <button type="button" onclick="CustomStudio.setLength('16&quot;', 0)" id="len-opt-16" class="len-btn py-2 border border-[var(--border-color)] hover:border-[var(--color-gold)]">16&quot;</button>
+                <button type="button" onclick="CustomStudio.setLength('18&quot;', 0)" id="len-opt-18" class="len-btn py-2 border border-[var(--color-gold)] bg-[var(--color-gold)] text-black">18&quot;</button>
+                <button type="button" onclick="CustomStudio.setLength('20&quot;', 90)" id="len-opt-20" class="len-btn py-2 border border-[var(--border-color)] hover:border-[var(--color-gold)]">20&quot; (+90)</button>
+                <button type="button" onclick="CustomStudio.setLength('24&quot;', 160)" id="len-opt-24" class="len-btn py-2 border border-[var(--border-color)] hover:border-[var(--color-gold)]">24&quot; (+160)</button>
+              </div>
+            </div>
+
+            <!-- Step 4: Pendant Talisman Design -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">4. Pendant Talisman</span>
+                <span id="cfg-pendant-val" class="text-[var(--text-muted)] font-semibold">Solitaire Diamond (+$400)</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                <button type="button" onclick="CustomStudio.setPendant('solitaire', 400, 'Solitaire Diamond', 'circle')" id="pend-opt-solitaire" class="pend-btn p-2 border border-[var(--color-gold)] bg-[var(--color-gold)] text-black font-bold text-center">Solitaire (+$400)</button>
+                <button type="button" onclick="CustomStudio.setPendant('medallion', 300, 'Celestial Medallion', 'coin')" id="pend-opt-medallion" class="pend-btn p-2 border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium text-center">Medallion (+$300)</button>
+                <button type="button" onclick="CustomStudio.setPendant('bar', 220, 'Minimalist Bar', 'bar')" id="pend-opt-bar" class="pend-btn p-2 border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium text-center">Bar (+$220)</button>
+                <button type="button" onclick="CustomStudio.setPendant('pearl', 350, 'Keshi Pearl', 'pearl')" id="pend-opt-pearl" class="pend-btn p-2 border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium text-center">Keshi Pearl (+$350)</button>
+                <button type="button" onclick="CustomStudio.setPendant('none', 0, 'No Pendant (Pure Chain)', 'none')" id="pend-opt-none" class="pend-btn p-2 border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium text-center">No Pendant</button>
+              </div>
+            </div>
+
+            <!-- Step 5: Custom Engraving & Font Selection -->
+            <div class="space-y-3 pt-2 border-t border-[var(--border-subtle)]">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">5. Personalized Engraving</span>
+                <span class="text-xs text-emerald-600 font-semibold">Complimentary</span>
+              </div>
+              <div class="flex gap-3">
+                <input
+                  id="studio-engraving-input"
+                  type="text"
+                  maxlength="6"
+                  value="AV"
+                  placeholder="Initials (e.g. AV, 1994)"
+                  oninput="CustomStudio.handleEngravingText(this.value)"
+                  class="flex-1 bg-[var(--bg-secondary)] border border-[var(--border-color)] px-4 py-2 text-sm text-[var(--text-primary)] uppercase tracking-widest focus:outline-none focus:border-[var(--color-gold)] font-serif"
+                />
+                <select
+                  id="studio-engraving-font"
+                  onchange="CustomStudio.handleEngravingFont(this.value)"
+                  class="bg-[var(--bg-secondary)] border border-[var(--border-color)] px-3 py-2 text-xs text-[var(--text-primary)] font-medium focus:outline-none"
+                >
+                  <option value="font-serif">Roman Serif</option>
+                  <option value="italic font-serif">Italian Script</option>
+                  <option value="font-sans font-bold">Modern Sans</option>
+                </select>
+              </div>
+              <p class="text-[10px] text-[var(--text-muted)]">Laser micro-etched in our Valenza atelier. Up to 6 characters.</p>
+            </div>
+
+            <!-- Step 6: Luxury Packaging Choice -->
+            <div class="space-y-3 pt-2 border-t border-[var(--border-subtle)]">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">6. Luxury Presentation</span>
+                <span id="cfg-package-val" class="text-[var(--text-muted)] font-semibold">Velvet Monogram Box</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-xs">
+                <button type="button" onclick="CustomStudio.setPackaging('velvet', 0, 'Velvet Box')" id="pkg-velvet" class="pkg-btn p-2 border border-[var(--color-gold)] bg-[var(--bg-secondary)] text-center font-bold">Velvet Box</button>
+                <button type="button" onclick="CustomStudio.setPackaging('wax', 50, 'Wax Seal Coffer')" id="pkg-wax" class="pkg-btn p-2 border border-[var(--border-color)] hover:border-[var(--color-gold)] text-center">Wax Coffer (+$50)</button>
+                <button type="button" onclick="CustomStudio.setPackaging('pouch', 0, 'Suede Pouch')" id="pkg-pouch" class="pkg-btn p-2 border border-[var(--border-color)] hover:border-[var(--color-gold)] text-center">Suede Pouch</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: THE 4-STAGE ATELIER CRAFTING JOURNEY
+         ========================================================================= -->
+    <section id="atelier-journey" class="py-24 bg-[var(--bg-primary)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">From Digital Conception To Tangible Gold</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[var(--text-primary)]">
+            The Bespoke Atelier Journey
+          </h2>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)] font-light leading-relaxed">
+            Every custom Aurelia piece undergoes a rigorous 4-stage alchemy combining cutting-edge digital visualization with Valenza goldsmith heritage.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Step 1 -->
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 space-y-5 relative group hover:border-[var(--color-gold)] transition-colors" data-aos="fade-up">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold">
+              01
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Precision 3D CAD</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              Your exact configuration is translated into microscopic CAD renders, balancing link weight, tensile equilibrium, and drape geometry against your collarbone.
+            </p>
+            <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold">Milestone: 48 Hours</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 space-y-5 relative group hover:border-[var(--color-gold)] transition-colors" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold">
+              02
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Geneva Metallurgy</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              100% recycled 18K solid gold and 925 sterling silver grains are smelted and drawn into uniform wire with laser-welded joint reinforcements.
+            </p>
+            <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold">Geneva Hallmark Verified</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 space-y-5 relative group hover:border-[var(--color-gold)] transition-colors" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold">
+              03
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Optical Gem Setting</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              Master setters place conflict-free VVS1 diamonds or Keshi pearls under 40x microscopes, securing bezels before high-precision laser etching your initials.
+            </p>
+            <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold">Valenza Atelier Craft</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 space-y-5 relative group hover:border-[var(--color-gold)] transition-colors" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold">
+              04
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Wax-Sealed Coffer</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              Polished with rouge to an immaculate mirror finish, your piece is nestled into an archival velvet coffer accompanied by a signed Certificate of Provenance.
+            </p>
+            <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold">White-Glove Insured Delivery</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: NECKLACE LENGTH & SILHOUETTE STYLE GUIDE
+         ========================================================================= -->
+    <section id="length-guide" class="py-24 bg-[var(--bg-secondary)] border-y border-[var(--border-color)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 space-y-6 text-left rtl:text-right" data-aos="fade-right">
+            <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Atelier Proportion Guide</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[var(--text-primary)]">
+              Finding Your Perfect Drape
+            </h2>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed font-light">
+              A bespoke necklace is designed around your unique anatomy and wardrobe. Understand how distinct chain lengths frame the neckline, from intimate chokers to sweeping opera pendants.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <div class="p-4 bg-[var(--bg-surface)] border border-[var(--border-color)] flex items-start gap-4">
+                <span class="font-serif text-lg font-bold text-[var(--color-gold)]">16"</span>
+                <div>
+                  <h4 class="text-xs uppercase font-bold tracking-wider text-[var(--text-primary)]">Choker Length</h4>
+                  <p class="text-xs text-[var(--text-secondary)] mt-1">Falls precisely along the base of the throat. Flawless with open boatneck, off-shoulder silks, and crisp button-downs.</p>
+                </div>
+              </div>
+
+              <div class="p-4 bg-[var(--bg-surface)] border border-[var(--border-color)] flex items-start gap-4">
+                <span class="font-serif text-lg font-bold text-[var(--color-gold)]">18"</span>
+                <div>
+                  <h4 class="text-xs uppercase font-bold tracking-wider text-[var(--text-primary)]">Princess Length (Most Popular)</h4>
+                  <p class="text-xs text-[var(--text-secondary)] mt-1">Rests elegantly on the collarbone. The ideal universal silhouette for solitaires, medallions, and daily heirloom wear.</p>
+                </div>
+              </div>
+
+              <div class="p-4 bg-[var(--bg-surface)] border border-[var(--border-color)] flex items-start gap-4">
+                <span class="font-serif text-lg font-bold text-[var(--color-gold)]">20"–24"</span>
+                <div>
+                  <h4 class="text-xs uppercase font-bold tracking-wider text-[var(--text-primary)]">Matinee & Opera Length</h4>
+                  <p class="text-xs text-[var(--text-secondary)] mt-1">Descends gracefully toward the breastbone. Best suited for deep plunge necklines, chunky knits, or layered talisman stacks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7" data-aos="fade-left">
+            <div class="relative bg-[var(--bg-surface)] border border-[var(--border-color)] p-8 sm:p-12 overflow-hidden shadow-xl">
+              <div class="text-center space-y-3 mb-8">
+                <span class="text-[10px] uppercase tracking-widest text-[var(--color-gold)] font-bold">Neckline Drape Spectrum</span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-[var(--text-primary)]">Comparative Proportions</h3>
+              </div>
+
+              <div class="space-y-6">
+                <!-- 16" Row -->
+                <div class="flex items-center gap-4">
+                  <span class="w-16 font-serif text-sm font-bold text-[var(--text-primary)]">16" Choker</span>
+                  <div class="flex-1 bg-[var(--bg-secondary)] h-3 rounded-full overflow-hidden p-0.5 border border-[var(--border-subtle)]">
+                    <div class="bg-[var(--color-gold)] h-full rounded-full w-[40%]"></div>
+                  </div>
+                  <span class="text-[11px] text-[var(--text-muted)] w-24 text-right">Base of Throat</span>
+                </div>
+
+                <!-- 18" Row -->
+                <div class="flex items-center gap-4">
+                  <span class="w-16 font-serif text-sm font-bold text-[var(--text-primary)]">18" Princess</span>
+                  <div class="flex-1 bg-[var(--bg-secondary)] h-3 rounded-full overflow-hidden p-0.5 border border-[var(--border-subtle)]">
+                    <div class="bg-[var(--color-gold)] h-full rounded-full w-[60%]"></div>
+                  </div>
+                  <span class="text-[11px] text-[var(--text-muted)] w-24 text-right">Collarbone</span>
+                </div>
+
+                <!-- 20" Row -->
+                <div class="flex items-center gap-4">
+                  <span class="w-16 font-serif text-sm font-bold text-[var(--text-primary)]">20" Matinee</span>
+                  <div class="flex-1 bg-[var(--bg-secondary)] h-3 rounded-full overflow-hidden p-0.5 border border-[var(--border-subtle)]">
+                    <div class="bg-[var(--color-gold)] h-full rounded-full w-[78%]"></div>
+                  </div>
+                  <span class="text-[11px] text-[var(--text-muted)] w-24 text-right">Upper Decollete</span>
+                </div>
+
+                <!-- 24" Row -->
+                <div class="flex items-center gap-4">
+                  <span class="w-16 font-serif text-sm font-bold text-[var(--text-primary)]">24" Opera</span>
+                  <div class="flex-1 bg-[var(--bg-secondary)] h-3 rounded-full overflow-hidden p-0.5 border border-[var(--border-subtle)]">
+                    <div class="bg-[var(--color-gold)] h-full rounded-full w-[95%]"></div>
+                  </div>
+                  <span class="text-[11px] text-[var(--text-muted)] w-24 text-right">Sternum Crest</span>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs text-[var(--text-muted)]">
+                <span>Need a bespoke in-between length (e.g. 17.5")?</span>
+                <a href="#concierge-booking" class="text-[var(--color-gold)] font-bold hover:underline">Consult Concierge →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: BESPOKE COMMISSION ARCHIVE (Recent Masterpieces)
+         ========================================================================= -->
+    <section id="commission-archive" class="py-24 bg-[var(--bg-primary)] transition-colors duration-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">The Atelier Archive</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[var(--text-primary)]">
+            Recent Bespoke Commissions
+          </h2>
+          <p class="text-xs sm:text-sm text-[var(--text-secondary)] font-light leading-relaxed">
+            Real heirlooms forged for patrons worldwide. Each piece preserves a unique story, milestone, or talismanic legacy.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Piece 1 -->
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] group overflow-hidden" data-aos="fade-up">
+            <div class="relative h-72 overflow-hidden bg-black/40">
+              <img
+                src="images/aurelia-solitaire-gold.jpg"
+                alt="The Solitaire Aurelia Commission"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--color-gold)]">
+                Commission #AU-882
+              </div>
+            </div>
+            <div class="p-6 space-y-3 text-left rtl:text-right">
+              <div class="text-[10px] uppercase tracking-widest text-[var(--text-muted)] flex flex-wrap md:flex-col lg:flex-row md:items-start lg:items-center gap-1 md:gap-0.5">
+                <span>Anniversary Commission</span>
+                <span class="hidden lg:inline">•</span>
+                <span>Zurich</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">The Celestial Coordinate Solitaire</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Solid 18K Champagne Gold Venetian chain with a floating 0.82ct VVS1 diamond, reverse-etched with the GPS coordinates of Lake Geneva.
+              </p>
+              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
+                <span class="font-semibold text-[var(--color-gold)]">$2,450 CAD</span>
+                <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">18" Box Weave</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Piece 2 -->
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] group overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-72 overflow-hidden bg-black/40">
+              <img
+                src="images/seraphina-silver-choker.jpg"
+                alt="The Roman Medallion Silver Commission"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--color-silver)]">
+                Commission #AU-914
+              </div>
+            </div>
+            <div class="p-6 space-y-3 text-left rtl:text-right">
+              <div class="text-[10px] uppercase tracking-widest text-[var(--text-muted)] flex flex-wrap md:flex-col lg:flex-row md:items-start lg:items-center gap-1 md:gap-0.5">
+                <span>Sovereign Milestone</span>
+                <span class="hidden lg:inline">•</span>
+                <span>Milan</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">The Valenza Dual-Finish Medallion</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Heavy 925 sterling silver snake choker adorned with a brushed circular coin talisman featuring Roman serif initials "MCMXC".
+              </p>
+              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
+                <span class="font-semibold text-[var(--color-silver)]">$1,150 CAD</span>
+                <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">16" Snake Link</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Piece 3 (Centered on tablet) -->
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] group overflow-hidden md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative h-72 overflow-hidden bg-black/40">
+              <img
+                src="images/keshi-baroque-pendant.jpg"
+                alt="The Australian Keshi Pearl Commission"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--color-gold)]">
+                Commission #AU-950
+              </div>
+            </div>
+            <div class="p-6 space-y-3 text-left rtl:text-right">
+              <div class="text-[10px] uppercase tracking-widest text-[var(--text-muted)] flex flex-wrap md:flex-col lg:flex-row md:items-start lg:items-center gap-1 md:gap-0.5">
+                <span>Bridal Heirloom</span>
+                <span class="hidden lg:inline">•</span>
+                <span>Paris</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">The Keshi Baroque Talisman</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+                Asymmetrical natural Australian baroque pearl wrapped in an 18K solid gold wire cage on a 20" diamond-cut rope chain.
+              </p>
+              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
+                <span class="font-semibold text-[var(--color-gold)]">$1,890 CAD</span>
+                <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">20" Rope Weave</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6: PRIVATE ATELIER CONCIERGE APPOINTMENT BOOKING
+         ========================================================================= -->
+    <section id="concierge-booking" class="py-24 bg-[var(--bg-secondary)] border-y border-[var(--border-color)] transition-colors duration-400">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] p-8 sm:p-12 shadow-2xl space-y-8" data-aos="fade-up">
+          
+          <div class="text-center space-y-3">
+            <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Private Salon Appointment</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">
+              Consult With Our Master Goldsmith
+            </h2>
+            <p class="text-xs sm:text-sm text-[var(--text-secondary)] max-w-xl mx-auto font-light leading-relaxed">
+              Prefer a dedicated private design session? Schedule a confidential 1-on-1 virtual or in-person consultation with an Aurelia atelier director.
+            </p>
+          </div>
+
+          <form id="concierge-form" onsubmit="event.preventDefault(); CustomStudio.handleAppointmentSubmit(event);" class="space-y-6 text-left rtl:text-right">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="block text-xs uppercase tracking-wider font-semibold text-[var(--text-primary)]">Your Full Name</label>
+                <input type="text" required placeholder="Lady Eleanor Vance" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-4 py-3 text-xs text-[var(--text-primary)] focus:outline-none focus:border-[var(--color-gold)]" />
+              </div>
+              <div class="space-y-2">
+                <label class="block text-xs uppercase tracking-wider font-semibold text-[var(--text-primary)]">Email Address</label>
+                <input type="email" required placeholder="eleanor@domain.com" class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-4 py-3 text-xs text-[var(--text-primary)] focus:outline-none focus:border-[var(--color-gold)]" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="block text-xs uppercase tracking-wider font-semibold text-[var(--text-primary)]">Salon Format</label>
+                <select class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-4 py-3 text-xs text-[var(--text-primary)] focus:outline-none focus:border-[var(--color-gold)]">
+                  <option value="virtual">Virtual VIP Video Concierge (Zoom / FaceTime)</option>
+                  <option value="geneva">Geneva Flagship Atelier (Rue du Rhône)</option>
+                  <option value="valenza">Valenza Goldsmith Workshop (Piedmont)</option>
+                  <option value="paris">Paris Private Salon (Place Vendôme)</option>
+                </select>
+              </div>
+              <div class="space-y-2">
+                <label class="block text-xs uppercase tracking-wider font-semibold text-[var(--text-primary)]">Metal of Preference</label>
+                <select class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-4 py-3 text-xs text-[var(--text-primary)] focus:outline-none focus:border-[var(--color-gold)]">
+                  <option value="18k-gold">18K Solid Champagne Gold</option>
+                  <option value="925-silver">925 Sterling Silver & Rhodium</option>
+                  <option value="dual-metal">Bespoke Dual-Metal Fusion</option>
+                  <option value="undecided">Undecided / Open to Recommendation</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="block text-xs uppercase tracking-wider font-semibold text-[var(--text-primary)]">Vision & Special Requests</label>
+              <textarea rows="3" placeholder="Tell us about the occasion, desired gem accents, or existing family heirlooms to be integrated..." class="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] px-4 py-3 text-xs text-[var(--text-primary)] focus:outline-none focus:border-[var(--color-gold)]"></textarea>
+            </div>
+
+            <div class="text-center pt-2">
+              <button type="submit" class="w-full sm:w-auto px-4 sm:px-10 py-4 btn-luxury-gold text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-[0.25em] whitespace-nowrap">
+                Request Confidential Appointment
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 7: BESPOKE ATELIER FAQ ACCORDION
+         ========================================================================= -->
+    <section id="custom-faq" class="py-24 bg-[var(--bg-primary)] transition-colors duration-400">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3" data-aos="fade-up">
+          <span class="text-xs uppercase tracking-[0.3em] text-[var(--color-gold)] font-bold">Frequently Clarified</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-[var(--text-primary)]">
+            Custom Atelier Inquiries
+          </h2>
+        </div>
+
+        <div class="space-y-4 text-left rtl:text-right" data-aos="fade-up">
+          
+          <!-- Q1 -->
+          <details class="group bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+            <summary class="flex items-center justify-between font-serif text-lg font-bold text-[var(--text-primary)]">
+              <span>What is the standard production timeline for a bespoke commission?</span>
+              <span class="text-[var(--color-gold)] transition-transform group-open:rotate-180">↓</span>
+            </summary>
+            <p class="text-xs text-[var(--text-secondary)] mt-4 leading-relaxed font-light">
+              Because each custom piece is hand-assembled, laser-inscribed, and officially hallmarked in Geneva, standard atelier crafting takes between 12 to 18 business days. We provide photo updates of your piece on the goldsmith workbench throughout the journey.
+            </p>
+          </details>
+
+          <!-- Q2 -->
+          <details class="group bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+            <summary class="flex items-center justify-between font-serif text-lg font-bold text-[var(--text-primary)]">
+              <span>Can I adjust chain length or re-engrave my piece later?</span>
+              <span class="text-[var(--color-gold)] transition-transform group-open:rotate-180">↓</span>
+            </summary>
+            <p class="text-xs text-[var(--text-secondary)] mt-4 leading-relaxed font-light">
+              Yes. All Aurelia custom commissions include complimentary sizing adjustments within the first 12 months. Our Valenza atelier also offers heirloom re-polishing and secondary hallmark additions whenever you choose to mark subsequent milestones.
+            </p>
+          </details>
+
+          <!-- Q3 -->
+          <details class="group bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+            <summary class="flex items-center justify-between font-serif text-lg font-bold text-[var(--text-primary)]">
+              <span>Are the diamonds and precious metals certified ethical?</span>
+              <span class="text-[var(--color-gold)] transition-transform group-open:rotate-180">↓</span>
+            </summary>
+            <p class="text-xs text-[var(--text-secondary)] mt-4 leading-relaxed font-light">
+              Without compromise. 100% of our gold and silver is recycled or sourced from RJC (Responsible Jewellery Council) certified refineries in Switzerland. All diamonds are natural, Kimberley Process compliant, graded VVS1 minimum clarity, and accompanied by full gemological documentation.
+            </p>
+          </details>
+
+          <!-- Q4 -->
+          <details class="group bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+            <summary class="flex items-center justify-between font-serif text-lg font-bold text-[var(--text-primary)]">
+              <span>How does payment and insured delivery work?</span>
+              <span class="text-[var(--color-gold)] transition-transform group-open:rotate-180">↓</span>
+            </summary>
+            <p class="text-xs text-[var(--text-secondary)] mt-4 leading-relaxed font-light">
+              You can commission your custom necklace directly via our secure checkout simulator or salon invoice. Every completed piece is dispatched via armored white-glove courier with discrete tamper-evident packaging and full transit insurance.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- GLOBAL FOOTER (Hydrated by app.js) -->
+  <div id="aurelia-footer"></div>
+
+  <!-- Interactive Overlays (Cart, Wishlist, Search, Modals) -->
+  <div id="aurelia-interactive-overlays"></div>
+
+  <!-- AOS CDN Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Data & Application Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Custom Studio Interactive Controller -->
+  <script>
+    const CustomStudio = {
+      config: {
+        metal: "gold",
+        metalPrice: 850,
+        chain: "box",
+        chainName: "Venetian Box",
+        chainPrice: 0,
+        length: "18\"",
+        lengthPrice: 0,
+        pendant: "solitaire",
+        pendantName: "Solitaire Diamond",
+        pendantShape: "circle",
+        pendantPrice: 400,
+        engravingText: "AV",
+        engravingFont: "font-serif",
+        packaging: "velvet",
+        packagingName: "Velvet Monogram Box",
+        packagingPrice: 0,
+        rotationAngle: 0
+      },
+
+      init() {
+        this.updateVisualStage();
+      },
+
+      rotateAngle(delta) {
+        this.config.rotationAngle += delta;
+        const model = document.getElementById("studio-3d-model");
+        if (model) {
+          model.style.transform = `rotateY(${this.config.rotationAngle}deg)`;
+        }
+      },
+
+      setMetal(metal, price) {
+        this.config.metal = metal;
+        this.config.metalPrice = price;
+
+        const goldBtn = document.getElementById("studio-metal-gold");
+        const silverBtn = document.getElementById("studio-metal-silver");
+        if (goldBtn) goldBtn.classList.toggle("border-[var(--color-gold)]", metal === "gold");
+        if (silverBtn) silverBtn.classList.toggle("border-[var(--color-silver)]", metal === "silver");
+
+        const metalVal = document.getElementById("cfg-metal-val");
+        if (metalVal) {
+          metalVal.textContent = metal === "gold"
+            ? "18K Champagne Gold ($850 base)"
+            : "925 Sterling Silver ($420 base)";
+        }
+
+        this.updateVisualStage();
+      },
+
+      setChain(type, price, name) {
+        this.config.chain = type;
+        this.config.chainPrice = price;
+        this.config.chainName = name;
+
+        document.querySelectorAll(".chain-btn").forEach(b => {
+          b.classList.remove("border-[var(--color-gold)]", "font-bold");
+          b.classList.add("border-[var(--border-color)]", "font-medium");
+        });
+        const active = document.getElementById(`chain-opt-${type}`);
+        if (active) {
+          active.classList.add("border-[var(--color-gold)]", "font-bold");
+          active.classList.remove("border-[var(--border-color)]");
+        }
+
+        const chainVal = document.getElementById("cfg-chain-val");
+        if (chainVal) chainVal.textContent = `${name} (+${price ? '$' + price : '0'})`;
+        this.updateVisualStage();
+      },
+
+      setLength(len, price) {
+        this.config.length = len;
+        this.config.lengthPrice = price;
+
+        document.querySelectorAll(".len-btn").forEach(b => {
+          b.classList.remove("bg-[var(--color-gold)]", "text-black", "border-[var(--color-gold)]");
+          b.classList.add("border-[var(--border-color)]");
+        });
+        const active = document.getElementById(`len-opt-${len.replace(/"/g, '')}`);
+        if (active) {
+          active.classList.add("bg-[var(--color-gold)]", "text-black", "border-[var(--color-gold)]");
+        }
+
+        const lenVal = document.getElementById("cfg-length-val");
+        if (lenVal) lenVal.textContent = `${len} (+${price ? '$' + price : '0'})`;
+        this.updateVisualStage();
+      },
+
+      setPendant(type, price, name, shape) {
+        this.config.pendant = type;
+        this.config.pendantPrice = price;
+        this.config.pendantName = name;
+        this.config.pendantShape = shape;
+
+        document.querySelectorAll(".pend-btn").forEach(b => {
+          b.classList.remove("bg-[var(--color-gold)]", "text-black", "border-[var(--color-gold)]", "font-bold");
+          b.classList.add("border-[var(--border-color)]", "font-medium");
+        });
+        const active = document.getElementById(`pend-opt-${type}`);
+        if (active) {
+          active.classList.add("bg-[var(--color-gold)]", "text-black", "border-[var(--color-gold)]", "font-bold");
+        }
+
+        const pendVal = document.getElementById("cfg-pendant-val");
+        if (pendVal) pendVal.textContent = `${name} (+${price ? '$' + price : '0'})`;
+        this.updateVisualStage();
+      },
+
+      handleEngravingText(txt) {
+        this.config.engravingText = txt.toUpperCase();
+        this.updateVisualStage();
+      },
+
+      handleEngravingFont(fontClass) {
+        this.config.engravingFont = fontClass;
+        this.updateVisualStage();
+      },
+
+      setPackaging(type, price, name) {
+        this.config.packaging = type;
+        this.config.packagingPrice = price;
+        this.config.packagingName = name;
+
+        document.querySelectorAll(".pkg-btn").forEach(b => {
+          b.classList.remove("border-[var(--color-gold)]", "font-bold");
+          b.classList.add("border-[var(--border-color)]");
+        });
+        const active = document.getElementById(`pkg-${type}`);
+        if (active) {
+          active.classList.add("border-[var(--color-gold)]", "font-bold");
+        }
+
+        const pkgVal = document.getElementById("cfg-package-val");
+        if (pkgVal) pkgVal.textContent = `${name} (+${price ? '$' + price : '0'})`;
+        this.updateVisualStage();
+      },
+
+      calculatePrice() {
+        return this.config.metalPrice + this.config.chainPrice + this.config.lengthPrice + this.config.pendantPrice + this.config.packagingPrice;
+      },
+
+      updateVisualStage() {
+        const isGold = this.config.metal === "gold";
+        const metalColor = isGold ? "#C6A15B" : "#C8CCD0";
+
+        // Chain Path Color & Style
+        const chainPath = document.getElementById("svg-chain-path");
+        if (chainPath) {
+          chainPath.setAttribute("stroke", metalColor);
+          if (this.config.chain === "snake") {
+            chainPath.setAttribute("stroke-dasharray", "none");
+            chainPath.setAttribute("stroke-width", "6");
+          } else if (this.config.chain === "figaro") {
+            chainPath.setAttribute("stroke-dasharray", "12 4 4 4");
+            chainPath.setAttribute("stroke-width", "5");
+          } else {
+            chainPath.setAttribute("stroke-dasharray", "7 3");
+            chainPath.setAttribute("stroke-width", "4.5");
+          }
+        }
+
+        // Pendant Shape & Color
+        const pendantLayer = document.getElementById("studio-pendant-layer");
+        const pendantShape = document.getElementById("pendant-visual-shape");
+        const engravingEl = document.getElementById("pendant-engraving-preview");
+
+        if (this.config.pendant === "none") {
+          if (pendantLayer) pendantLayer.classList.add("hidden");
+        } else {
+          if (pendantLayer) pendantLayer.classList.remove("hidden");
+          if (pendantShape) {
+            pendantShape.style.borderColor = metalColor;
+            pendantShape.style.backgroundColor = isGold ? "rgba(198, 161, 91, 0.3)" : "rgba(200, 204, 208, 0.3)";
+            
+            if (this.config.pendantShape === "bar") {
+              pendantShape.className = "w-8 h-20 rounded-sm border-2 flex items-center justify-center shadow-lg transition-all duration-300";
+            } else if (this.config.pendantShape === "pearl") {
+              pendantShape.className = "w-14 h-16 rounded-[45%_55%_60%_40%] border-2 bg-white/70 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-300";
+            } else {
+              pendantShape.className = "w-14 h-14 rounded-full border-2 flex items-center justify-center shadow-lg transition-all duration-300";
+            }
+          }
+
+          if (engravingEl) {
+            engravingEl.textContent = this.config.engravingText || "AV";
+            engravingEl.className = `tracking-widest uppercase text-white ${this.config.engravingFont}`;
+          }
+        }
+
+        // Update Price and Summary
+        const totalPrice = this.calculatePrice();
+        const priceEl = document.getElementById("studio-live-price");
+        if (priceEl) priceEl.textContent = `$${totalPrice.toLocaleString()}`;
+
+        const summaryEl = document.getElementById("studio-spec-summary");
+        if (summaryEl) {
+          summaryEl.textContent = `${isGold ? '18K Champagne Gold' : '925 Sterling Silver'} • ${this.config.length} ${this.config.chainName}`;
+        }
+
+        const engLabel = document.getElementById("studio-engraving-label");
+        if (engLabel) {
+          engLabel.textContent = `Engraved: "${this.config.engravingText || 'None'}" • ${this.config.packagingName}`;
+        }
+      },
+
+      saveDesign() {
+        const design = {
+          name: `Custom ${this.config.chainName} (${this.config.metal === 'gold' ? '18K Gold' : '925 Silver'})`,
+          metal: this.config.metal,
+          price: this.calculatePrice(),
+          length: this.config.length,
+          specs: `${this.config.chainName}, ${this.config.pendantName}, Engraving: "${this.config.engravingText}"`
+        };
+
+        StorageManager.saveCustomDesign(design);
+        AureliaApp.showToast("Bespoke necklace design saved to your profile", "gold");
+      },
+
+      addToCart() {
+        const totalPrice = this.calculatePrice();
+        const customItem = {
+          isCustom: true,
+          customId: "custom-" + Date.now(),
+          name: `Bespoke ${this.config.chainName} Necklace`,
+          price: totalPrice,
+          image: this.config.metal === "gold"
+            ? "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80"
+            : "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80",
+          metal: this.config.metal === "gold" ? "18K Champagne Gold" : "925 Sterling Silver",
+          length: this.config.length,
+          customSpecs: `${this.config.pendantName} • Engraved "${this.config.engravingText}" • ${this.config.packagingName}`
+        };
+
+        StorageManager.addToCart("bespoke-necklace", 1, customItem);
+        AureliaApp.showToast("Bespoke necklace added to your Shopping Bag", "gold");
+      },
+
+      handleAppointmentSubmit(e) {
+        e.target.reset();
+        AureliaApp.showToast("Private Atelier appointment request submitted. Our concierge will contact you within 24 hours.", "gold");
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      CustomStudio.init();
+    });
+  </script>
+</body>
+</html>

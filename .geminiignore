@@ -1,0 +1,16 @@
+# Exclude OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Exclude temporary and log files
+*.log
+*.tmp
+*.temp
+scratch/
+
+# Exclude large binary media dumps if created locally
+*.webp
+*.mp4
+*.mov
