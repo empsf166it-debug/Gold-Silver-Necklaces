@@ -75,12 +75,12 @@
             Co-create with Aurelia's master goldsmiths. Select your solid 18K gold or 925 sterling silver silhouette, sculpt fluid chain weaves, curate ethical VVS1 talisman pendants, and engrave indelible memories in real-time 3D.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-2">
-            <a href="#interactive-customizer" class="w-full sm:w-64 h-14 btn-luxury-gold text-xs font-bold uppercase tracking-[0.25em] flex items-center justify-center gap-2 whitespace-nowrap">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <a href="#interactive-customizer" class="w-full sm:w-auto px-6 sm:px-8 py-4 min-h-[3.5rem] btn-luxury-gold text-xs font-bold uppercase tracking-wider sm:tracking-[0.18em] flex items-center justify-center gap-2 whitespace-nowrap text-center">
               <span>Start 3D Configuration</span>
               <svg class="w-4 h-4 rtl-mirror shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
             </a>
-            <a href="#atelier-journey" class="w-full sm:w-64 h-14 btn-luxury-ghost text-xs font-bold uppercase tracking-[0.25em] flex items-center justify-center whitespace-nowrap">
+            <a href="#atelier-journey" class="w-full sm:w-auto px-6 sm:px-8 py-4 min-h-[3.5rem] btn-luxury-ghost text-xs font-bold uppercase tracking-wider sm:tracking-[0.18em] flex items-center justify-center whitespace-nowrap text-center">
               <span>The Craftsmanship Process</span>
             </a>
           </div>
@@ -198,18 +198,18 @@
             </div>
 
             <!-- Save Design & Add to Cart Controls -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
               <button
                 type="button"
                 onclick="CustomStudio.saveDesign()"
-                class="py-3.5 px-4 btn-luxury-ghost text-xs font-bold uppercase tracking-wider sm:tracking-widest"
+                class="w-full py-3.5 px-4 btn-luxury-ghost text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest text-center whitespace-normal max-w-full"
               >
                 Save to Wishlist
               </button>
               <button
                 type="button"
                 onclick="CustomStudio.addToCart()"
-                class="py-3.5 px-4 btn-luxury-gold text-xs font-bold uppercase tracking-wider sm:tracking-widest"
+                class="w-full py-3.5 px-4 btn-luxury-gold text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest text-center whitespace-normal max-w-full"
               >
                 Add Custom Piece to Bag
               </button>
@@ -222,33 +222,33 @@
             
             <!-- Step 1: Base Metal -->
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">1. Select Precious Metal</span>
-                <span id="cfg-metal-val" class="text-[var(--color-gold)] font-semibold">18K Champagne Gold ($850 base)</span>
+                <span id="cfg-metal-val" class="text-[var(--color-gold)] font-semibold text-left rtl:text-right">18K Champagne Gold ($850 base)</span>
               </div>
-              <div class="grid grid-cols-2 gap-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button
                   type="button"
                   onclick="CustomStudio.setMetal('gold', 850)"
                   id="studio-metal-gold"
-                  class="p-3 border-2 border-[var(--color-gold)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-3 transition-colors"
+                  class="p-2.5 sm:p-3 border-2 border-[var(--color-gold)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-2.5 sm:gap-3 transition-colors min-h-[4rem]"
                 >
-                  <span class="w-4 h-4 rounded-full bg-[#C6A15B] border border-black/30"></span>
-                  <div>
-                    <div>18K Champagne Gold</div>
-                    <div class="text-[10px] text-[var(--text-muted)] font-normal">Assayed in Geneva</div>
+                  <span class="w-4 h-4 rounded-full bg-[#C6A15B] border border-black/30 shrink-0"></span>
+                  <div class="min-w-0 flex-1">
+                    <div class="truncate sm:whitespace-normal font-bold text-[11px] sm:text-xs">18K Champagne Gold</div>
+                    <div class="text-[10px] text-[var(--text-muted)] font-normal truncate">Assayed in Geneva</div>
                   </div>
                 </button>
                 <button
                   type="button"
                   onclick="CustomStudio.setMetal('silver', 420)"
                   id="studio-metal-silver"
-                  class="p-3 border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-3 hover:border-[var(--color-silver)] transition-colors"
+                  class="p-2.5 sm:p-3 border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-2.5 sm:gap-3 hover:border-[var(--color-silver)] transition-colors min-h-[4rem]"
                 >
-                  <span class="w-4 h-4 rounded-full bg-[#C8CCD0] border border-black/30"></span>
-                  <div>
-                    <div>925 Sterling Silver</div>
-                    <div class="text-[10px] text-[var(--text-muted)] font-normal">Rhodium Dipped</div>
+                  <span class="w-4 h-4 rounded-full bg-[#C8CCD0] border border-black/30 shrink-0"></span>
+                  <div class="min-w-0 flex-1">
+                    <div class="truncate sm:whitespace-normal font-bold text-[11px] sm:text-xs">925 Sterling Silver</div>
+                    <div class="text-[10px] text-[var(--text-muted)] font-normal truncate">Rhodium Dipped</div>
                   </div>
                 </button>
               </div>
@@ -256,9 +256,9 @@
 
             <!-- Step 2: Chain Silhouette Weave -->
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">2. Chain Style Weave</span>
-                <span id="cfg-chain-val" class="text-[var(--text-muted)] font-semibold">Venetian Box (+0)</span>
+                <span id="cfg-chain-val" class="text-[var(--text-muted)] font-semibold text-left rtl:text-right">Venetian Box (+0)</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                 <button type="button" onclick="CustomStudio.setChain('box', 0, 'Venetian Box')" id="chain-opt-box" class="chain-btn p-2.5 border-2 border-[var(--color-gold)] bg-[var(--bg-secondary)] text-center font-bold">Box Link</button>
@@ -270,9 +270,9 @@
 
             <!-- Step 3: Chain Length -->
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">3. Length Proportions</span>
-                <span id="cfg-length-val" class="text-[var(--text-muted)] font-semibold">18" Princess</span>
+                <span id="cfg-length-val" class="text-[var(--text-muted)] font-semibold text-left rtl:text-right">18" Princess</span>
               </div>
               <div class="grid grid-cols-4 gap-2 text-xs font-bold">
                 <button type="button" onclick="CustomStudio.setLength('16&quot;', 0)" id="len-opt-16" class="len-btn py-2 border border-[var(--border-color)] hover:border-[var(--color-gold)]">16&quot;</button>
@@ -284,9 +284,9 @@
 
             <!-- Step 4: Pendant Talisman Design -->
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">4. Pendant Talisman</span>
-                <span id="cfg-pendant-val" class="text-[var(--text-muted)] font-semibold">Solitaire Diamond (+$400)</span>
+                <span id="cfg-pendant-val" class="text-[var(--text-muted)] font-semibold text-left rtl:text-right">Solitaire Diamond (+$400)</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                 <button type="button" onclick="CustomStudio.setPendant('solitaire', 400, 'Solitaire Diamond', 'circle')" id="pend-opt-solitaire" class="pend-btn p-2 border border-[var(--color-gold)] bg-[var(--color-gold)] text-black font-bold text-center">Solitaire (+$400)</button>
@@ -299,9 +299,9 @@
 
             <!-- Step 5: Custom Engraving & Font Selection -->
             <div class="space-y-3 pt-2 border-t border-[var(--border-subtle)]">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">5. Personalized Engraving</span>
-                <span class="text-xs text-emerald-600 font-semibold">Complimentary</span>
+                <span class="text-xs text-emerald-600 font-semibold text-left rtl:text-right">Complimentary</span>
               </div>
               <div class="flex gap-3">
                 <input
@@ -328,9 +328,9 @@
 
             <!-- Step 6: Luxury Packaging Choice -->
             <div class="space-y-3 pt-2 border-t border-[var(--border-subtle)]">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">6. Luxury Presentation</span>
-                <span id="cfg-package-val" class="text-[var(--text-muted)] font-semibold">Velvet Monogram Box</span>
+                <span id="cfg-package-val" class="text-[var(--text-muted)] font-semibold text-left rtl:text-right">Velvet Monogram Box</span>
               </div>
               <div class="grid grid-cols-3 gap-2 text-xs">
                 <button type="button" onclick="CustomStudio.setPackaging('velvet', 0, 'Velvet Box')" id="pkg-velvet" class="pkg-btn p-2 border border-[var(--color-gold)] bg-[var(--bg-secondary)] text-center font-bold">Velvet Box</button>
@@ -362,54 +362,62 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
           
           <!-- Step 1 -->
-          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 space-y-5 relative group hover:border-[var(--color-gold)] transition-colors" data-aos="fade-up">
-            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold">
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 relative group hover:border-[var(--color-gold)] transition-colors flex flex-col" data-aos="fade-up">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold mb-5">
               01
             </div>
-            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Precision 3D CAD</h3>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">Precision 3D CAD</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-6 flex-1">
               Your exact configuration is translated into microscopic CAD renders, balancing link weight, tensile equilibrium, and drape geometry against your collarbone.
             </p>
-            <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold">Milestone: 48 Hours</div>
+            <div class="mt-auto pt-3 border-t border-[var(--border-subtle)] flex items-center">
+              <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold whitespace-nowrap">48-Hour CAD</div>
+            </div>
           </div>
 
           <!-- Step 2 -->
-          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 space-y-5 relative group hover:border-[var(--color-gold)] transition-colors" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold">
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 relative group hover:border-[var(--color-gold)] transition-colors flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold mb-5">
               02
             </div>
-            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Geneva Metallurgy</h3>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">Geneva Metallurgy</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-6 flex-1">
               100% recycled 18K solid gold and 925 sterling silver grains are smelted and drawn into uniform wire with laser-welded joint reinforcements.
             </p>
-            <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold">Geneva Hallmark Verified</div>
+            <div class="mt-auto pt-3 border-t border-[var(--border-subtle)] flex items-center">
+              <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold whitespace-nowrap">Geneva Hallmark</div>
+            </div>
           </div>
 
           <!-- Step 3 -->
-          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 space-y-5 relative group hover:border-[var(--color-gold)] transition-colors" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold">
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 relative group hover:border-[var(--color-gold)] transition-colors flex flex-col" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold mb-5">
               03
             </div>
-            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Optical Gem Setting</h3>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">Optical Gem Setting</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-6 flex-1">
               Master setters place conflict-free VVS1 diamonds or Keshi pearls under 40x microscopes, securing bezels before high-precision laser etching your initials.
             </p>
-            <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold">Valenza Atelier Craft</div>
+            <div class="mt-auto pt-3 border-t border-[var(--border-subtle)] flex items-center">
+              <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold whitespace-nowrap">Valenza Crafted</div>
+            </div>
           </div>
 
           <!-- Step 4 -->
-          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 space-y-5 relative group hover:border-[var(--color-gold)] transition-colors" data-aos="fade-up" data-aos-delay="300">
-            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold">
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] p-8 relative group hover:border-[var(--color-gold)] transition-colors flex flex-col" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/10 text-[var(--color-gold)] flex items-center justify-center font-serif text-xl font-bold mb-5">
               04
             </div>
-            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)]">Wax-Sealed Coffer</h3>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            <h3 class="font-serif text-2xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">Wax-Sealed Coffer</h3>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-6 flex-1">
               Polished with rouge to an immaculate mirror finish, your piece is nestled into an archival velvet coffer accompanied by a signed Certificate of Provenance.
             </p>
-            <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold">White-Glove Insured Delivery</div>
+            <div class="mt-auto pt-3 border-t border-[var(--border-subtle)] flex items-center">
+              <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-bold whitespace-nowrap">Insured Delivery</div>
+            </div>
           </div>
 
         </div>
@@ -537,7 +545,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           <!-- Piece 1 -->
-          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] group overflow-hidden" data-aos="fade-up">
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] group overflow-hidden flex flex-col" data-aos="fade-up">
             <div class="relative h-72 overflow-hidden bg-black/40">
               <img
                 src="images/aurelia-solitaire-gold.jpg"
@@ -548,17 +556,17 @@
                 Commission #AU-882
               </div>
             </div>
-            <div class="p-6 space-y-3 text-left rtl:text-right">
+            <div class="p-6 flex flex-col flex-1 space-y-3 text-left rtl:text-right">
               <div class="text-[10px] uppercase tracking-widest text-[var(--text-muted)] flex flex-wrap md:flex-col lg:flex-row md:items-start lg:items-center gap-1 md:gap-0.5">
                 <span>Anniversary Commission</span>
                 <span class="hidden lg:inline">•</span>
                 <span>Zurich</span>
               </div>
-              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">The Celestial Coordinate Solitaire</h3>
-              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">The Celestial Coordinate Solitaire</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-1">
                 Solid 18K Champagne Gold Venetian chain with a floating 0.82ct VVS1 diamond, reverse-etched with the GPS coordinates of Lake Geneva.
               </p>
-              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
+              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs mt-auto">
                 <span class="font-semibold text-[var(--color-gold)]">$2,450 CAD</span>
                 <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">18" Box Weave</span>
               </div>
@@ -566,7 +574,7 @@
           </div>
 
           <!-- Piece 2 -->
-          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] group overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
             <div class="relative h-72 overflow-hidden bg-black/40">
               <img
                 src="images/seraphina-silver-choker.jpg"
@@ -577,17 +585,17 @@
                 Commission #AU-914
               </div>
             </div>
-            <div class="p-6 space-y-3 text-left rtl:text-right">
+            <div class="p-6 flex flex-col flex-1 space-y-3 text-left rtl:text-right">
               <div class="text-[10px] uppercase tracking-widest text-[var(--text-muted)] flex flex-wrap md:flex-col lg:flex-row md:items-start lg:items-center gap-1 md:gap-0.5">
                 <span>Sovereign Milestone</span>
                 <span class="hidden lg:inline">•</span>
                 <span>Milan</span>
               </div>
-              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">The Valenza Dual-Finish Medallion</h3>
-              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">The Valenza Dual-Finish Medallion</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-1">
                 Heavy 925 sterling silver snake choker adorned with a brushed circular coin talisman featuring Roman serif initials "MCMXC".
               </p>
-              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
+              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs mt-auto">
                 <span class="font-semibold text-[var(--color-silver)]">$1,150 CAD</span>
                 <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">16" Snake Link</span>
               </div>
@@ -595,7 +603,7 @@
           </div>
 
           <!-- Piece 3 (Centered on tablet) -->
-          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] group overflow-hidden md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-[var(--bg-secondary)] border border-[var(--border-color)] group overflow-hidden flex flex-col md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full" data-aos="fade-up" data-aos-delay="200">
             <div class="relative h-72 overflow-hidden bg-black/40">
               <img
                 src="images/keshi-baroque-pendant.jpg"
@@ -606,17 +614,17 @@
                 Commission #AU-950
               </div>
             </div>
-            <div class="p-6 space-y-3 text-left rtl:text-right">
+            <div class="p-6 flex flex-col flex-1 space-y-3 text-left rtl:text-right">
               <div class="text-[10px] uppercase tracking-widest text-[var(--text-muted)] flex flex-wrap md:flex-col lg:flex-row md:items-start lg:items-center gap-1 md:gap-0.5">
                 <span>Bridal Heirloom</span>
                 <span class="hidden lg:inline">•</span>
                 <span>Paris</span>
               </div>
-              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">The Keshi Baroque Talisman</h3>
-              <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">The Keshi Baroque Talisman</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed flex-1">
                 Asymmetrical natural Australian baroque pearl wrapped in an 18K solid gold wire cage on a 20" diamond-cut rope chain.
               </p>
-              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
+              <div class="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs mt-auto">
                 <span class="font-semibold text-[var(--color-gold)]">$1,890 CAD</span>
                 <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">20" Rope Weave</span>
               </div>
@@ -715,7 +723,9 @@
           <details class="group bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
             <summary class="flex items-center justify-between font-serif text-lg font-bold text-[var(--text-primary)]">
               <span>What is the standard production timeline for a bespoke commission?</span>
-              <span class="text-[var(--color-gold)] transition-transform group-open:rotate-180">↓</span>
+              <span class="text-[var(--color-gold)] transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
             </summary>
             <p class="text-xs text-[var(--text-secondary)] mt-4 leading-relaxed font-light">
               Because each custom piece is hand-assembled, laser-inscribed, and officially hallmarked in Geneva, standard atelier crafting takes between 12 to 18 business days. We provide photo updates of your piece on the goldsmith workbench throughout the journey.
@@ -726,7 +736,9 @@
           <details class="group bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
             <summary class="flex items-center justify-between font-serif text-lg font-bold text-[var(--text-primary)]">
               <span>Can I adjust chain length or re-engrave my piece later?</span>
-              <span class="text-[var(--color-gold)] transition-transform group-open:rotate-180">↓</span>
+              <span class="text-[var(--color-gold)] transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
             </summary>
             <p class="text-xs text-[var(--text-secondary)] mt-4 leading-relaxed font-light">
               Yes. All Aurelia custom commissions include complimentary sizing adjustments within the first 12 months. Our Valenza atelier also offers heirloom re-polishing and secondary hallmark additions whenever you choose to mark subsequent milestones.
@@ -737,7 +749,9 @@
           <details class="group bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
             <summary class="flex items-center justify-between font-serif text-lg font-bold text-[var(--text-primary)]">
               <span>Are the diamonds and precious metals certified ethical?</span>
-              <span class="text-[var(--color-gold)] transition-transform group-open:rotate-180">↓</span>
+              <span class="text-[var(--color-gold)] transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
             </summary>
             <p class="text-xs text-[var(--text-secondary)] mt-4 leading-relaxed font-light">
               Without compromise. 100% of our gold and silver is recycled or sourced from RJC (Responsible Jewellery Council) certified refineries in Switzerland. All diamonds are natural, Kimberley Process compliant, graded VVS1 minimum clarity, and accompanied by full gemological documentation.
@@ -748,7 +762,9 @@
           <details class="group bg-[var(--bg-secondary)] border border-[var(--border-color)] p-6 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
             <summary class="flex items-center justify-between font-serif text-lg font-bold text-[var(--text-primary)]">
               <span>How does payment and insured delivery work?</span>
-              <span class="text-[var(--color-gold)] transition-transform group-open:rotate-180">↓</span>
+              <span class="text-[var(--color-gold)] transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
             </summary>
             <p class="text-xs text-[var(--text-secondary)] mt-4 leading-relaxed font-light">
               You can commission your custom necklace directly via our secure checkout simulator or salon invoice. Every completed piece is dispatched via armored white-glove courier with discrete tamper-evident packaging and full transit insurance.

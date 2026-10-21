@@ -58,13 +58,13 @@
           alt="Fine Jewelry Atelier Background"
           class="w-full h-full object-cover object-center"
         />
-        <div class="absolute inset-0 bg-gradient-to-r from-[#181715] via-[#181715]/90 to-[#181715]/60"></div>
+        <div class="absolute inset-0 bg-radial from-[#181715]/70 via-[#181715]/90 to-[#181715]"></div>
       </div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="max-w-2xl space-y-4" data-aos="fade-up">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div class="max-w-2xl mx-auto space-y-4 flex flex-col items-center" data-aos="fade-up">
           <!-- Breadcrumb -->
-          <nav class="flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-[#C6A15B] rtl:space-x-reverse font-medium">
+          <nav class="flex items-center justify-center space-x-2 text-xs uppercase tracking-[0.2em] text-[#C6A15B] rtl:space-x-reverse font-medium">
             <a href="index.html" class="hover:underline">Home</a>
             <span>/</span>
             <span class="text-[#D4CDC3]">Shop Necklaces</span>
@@ -79,7 +79,7 @@
           </p>
 
           <!-- Metal Quick Links -->
-          <div class="flex items-center gap-3 pt-2">
+          <div class="flex items-center justify-center gap-3 pt-2">
             <button onclick="ShopController.setFilter('metal', 'gold')" class="px-4 py-1.5 border border-[#C6A15B] text-xs font-semibold uppercase tracking-wider text-[#ECC880] hover:bg-[#C6A15B]/15 transition-colors">
               18K Champagne Gold
             </button>
@@ -148,38 +148,38 @@
           </div>
 
           <!-- Bottom Row: Style, Length, Price Range & Clear All -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-5 lg:gap-6 items-center">
             
             <!-- Silhouette Style Filter -->
-            <div class="md:col-span-5 flex flex-wrap items-center gap-2">
-              <span class="text-xs uppercase tracking-widest text-[var(--text-muted)] mr-2 font-bold">Style:</span>
-              <button onclick="ShopController.setFilter('style', 'all')" id="btn-style-all" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--color-gold)] bg-[var(--color-gold)] text-black font-bold">All</button>
-              <button onclick="ShopController.setFilter('style', 'pendant')" id="btn-style-pendant" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium">Pendant</button>
-              <button onclick="ShopController.setFilter('style', 'choker')" id="btn-style-choker" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium">Choker</button>
-              <button onclick="ShopController.setFilter('style', 'layered')" id="btn-style-layered" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium">Layered</button>
-              <button onclick="ShopController.setFilter('style', 'chain')" id="btn-style-chain" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium">Chain</button>
-              <button onclick="ShopController.setFilter('style', 'tennis')" id="btn-style-tennis" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium">Tennis</button>
+            <div class="md:col-span-2 xl:col-span-5 flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <span class="text-xs uppercase tracking-widest text-[var(--text-muted)] mr-1.5 font-bold whitespace-nowrap">Style:</span>
+              <button onclick="ShopController.setFilter('style', 'all')" id="btn-style-all" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--color-gold)] bg-[var(--color-gold)] text-black font-bold whitespace-nowrap">All</button>
+              <button onclick="ShopController.setFilter('style', 'pendant')" id="btn-style-pendant" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium whitespace-nowrap">Pendant</button>
+              <button onclick="ShopController.setFilter('style', 'choker')" id="btn-style-choker" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium whitespace-nowrap">Choker</button>
+              <button onclick="ShopController.setFilter('style', 'layered')" id="btn-style-layered" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium whitespace-nowrap">Layered</button>
+              <button onclick="ShopController.setFilter('style', 'chain')" id="btn-style-chain" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium whitespace-nowrap">Chain</button>
+              <button onclick="ShopController.setFilter('style', 'tennis')" id="btn-style-tennis" class="filter-style-btn px-2.5 py-1 text-[11px] uppercase border border-[var(--border-color)] hover:border-[var(--color-gold)] font-medium whitespace-nowrap">Tennis</button>
             </div>
 
             <!-- Chain Length Filter -->
-            <div class="md:col-span-3 flex items-center gap-2">
-              <span class="text-xs uppercase tracking-widest text-[var(--text-muted)] mr-1 font-bold">Length:</span>
+            <div class="xl:col-span-3 flex items-center gap-2">
+              <span class="text-xs uppercase tracking-widest text-[var(--text-muted)] mr-1 font-bold whitespace-nowrap shrink-0">Length:</span>
               <select
                 id="catalog-length"
                 onchange="ShopController.setFilter('length', this.value)"
-                class="bg-[var(--bg-surface)] border border-[var(--border-color)] px-3 py-1.5 text-xs text-[var(--text-primary)] font-medium focus:outline-none"
+                class="w-full bg-[var(--bg-surface)] border border-[var(--border-color)] px-2.5 py-1.5 text-xs text-[var(--text-primary)] font-medium focus:outline-none"
               >
                 <option value="all">All Lengths</option>
-                <option value="16&quot;">16&quot; Collar / Choker</option>
-                <option value="18&quot;">18&quot; Princess (Standard)</option>
+                <option value="16&quot;">16&quot; Collar</option>
+                <option value="18&quot;">18&quot; Princess</option>
                 <option value="20&quot;">20&quot; Matinee</option>
                 <option value="22&quot;">22&quot; Extended</option>
-                <option value="24&quot;">24&quot; Opera Lariat</option>
+                <option value="24&quot;">24&quot; Opera</option>
               </select>
             </div>
 
             <!-- Price Slider & Clear All -->
-            <div class="md:col-span-4 flex items-center justify-between gap-4">
+            <div class="xl:col-span-4 flex items-center justify-between gap-4">
               <div class="flex-1 space-y-1">
                 <div class="flex justify-between text-[11px] text-[var(--text-muted)] font-medium">
                   <span>Max Price:</span>
@@ -243,11 +243,11 @@
         </div>
 
         <!-- 3 Styling Columns (Staggered Entrance & Image Reveals) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 items-stretch">
           
           <!-- Guide 1: The 3-Tier Layering Rule -->
-          <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] p-6 space-y-5" data-aos="fade-up">
-            <div class="relative overflow-hidden aspect-[4/3]">
+          <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] overflow-hidden flex flex-col" data-aos="fade-up">
+            <div class="relative overflow-hidden aspect-[4/3] w-full">
               <img
                 src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=800&q=80"
                 alt="Necklace Layering Golden Rule"
@@ -255,15 +255,17 @@
               />
               <span class="absolute top-3 left-3 bg-black/80 text-[#ECC880] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5">Rule 01</span>
             </div>
-            <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">The 3-Tier Layering Harmony</h3>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
-              Begin with an anchor choker (14"-16") to frame the collarbone hollow. Add a textured 18" princess chain for dimension, and finish with a 20"-24" pendant or lariat to lengthen the silhouette.
-            </p>
+            <div class="p-6 pt-5 flex-1 flex flex-col">
+              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">The 3-Tier Layering Harmony</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed mt-3">
+                Begin with an anchor choker (14"-16") to frame the collarbone hollow. Add a textured 18" princess chain for dimension, and finish with a 20"-24" pendant or lariat to lengthen the silhouette.
+              </p>
+            </div>
           </div>
 
           <!-- Guide 2: Gold vs Silver Metal Pairing -->
-          <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] p-6 space-y-5" data-aos="fade-up" data-aos-delay="150">
-            <div class="relative overflow-hidden aspect-[4/3]">
+          <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="150">
+            <div class="relative overflow-hidden aspect-[4/3] w-full">
               <img
                 src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80"
                 alt="Gold and Silver Metal Duality"
@@ -271,15 +273,17 @@
               />
               <span class="absolute top-3 left-3 bg-black/80 text-[#C8CCD0] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5">Rule 02</span>
             </div>
-            <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">Embrace Mixed Metal Duality</h3>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
-              Rules of strict monochrome are obsolete. Modern luxury celebrates intertwining warm 18K Champagne Gold with crisp 925 sterling silver. Anchor the look with our dual-tone Clarisse necklace.
-            </p>
+            <div class="p-6 pt-5 flex-1 flex flex-col">
+              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">Embrace Mixed Metal Duality</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed mt-3">
+                Rules of strict monochrome are obsolete. Modern luxury celebrates intertwining warm 18K Champagne Gold with crisp 925 sterling silver. Anchor the look with our dual-tone Clarisse necklace.
+              </p>
+            </div>
           </div>
 
           <!-- Guide 3: Necklines & Occasion Dressing (Centered on tablet) -->
-          <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] p-6 space-y-5 md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full" data-aos="fade-up" data-aos-delay="300">
-            <div class="relative overflow-hidden aspect-[4/3]">
+          <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] overflow-hidden flex flex-col md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-1 lg:w-full" data-aos="fade-up" data-aos-delay="300">
+            <div class="relative overflow-hidden aspect-[4/3] w-full">
               <img
                 src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=800&q=80"
                 alt="Evening Gala Neckpiece Styling"
@@ -287,10 +291,12 @@
               />
               <span class="absolute top-3 left-3 bg-black/80 text-[#ECC880] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5">Rule 03</span>
             </div>
-            <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">Necklines & Occasion Guidance</h3>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
-              Pair plunging V-necklines with dramatic lariats; opt for sculptural silver chokers with strapless evening gowns; and choose delicate diamond solitaires for buttoned silk collars.
-            </p>
+            <div class="p-6 pt-5 flex-1 flex flex-col">
+              <h3 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.5rem] flex items-start">Necklines & Occasion Guidance</h3>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed mt-3">
+                Pair plunging V-necklines with dramatic lariats; opt for sculptural silver chokers with strapless evening gowns; and choose delicate diamond solitaires for buttoned silk collars.
+              </p>
+            </div>
           </div>
 
         </div>
@@ -523,11 +529,13 @@
             <!-- Content Area -->
             <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
               <div>
-                <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-medium">${p.metalType} • ${p.length}</div>
-                <h4 class="font-serif text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-gold)] transition-colors mt-0.5 line-clamp-2 min-h-[3.25rem] leading-snug max-w-[240px]">
-                  <a href="product.html?id=${p.id}">${p.name}</a>
-                </h4>
-                <p class="text-xs text-[var(--text-secondary)] line-clamp-2 mt-1 leading-relaxed">
+                <div class="text-[10px] uppercase tracking-wider text-[var(--color-gold)] font-medium line-clamp-1 h-5 flex items-center">${p.metalType} • ${p.length}</div>
+                <div class="h-14 flex items-start mt-1">
+                  <h4 class="font-serif text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--color-gold)] transition-colors line-clamp-2 leading-snug">
+                    <a href="product.html?id=${p.id}">${p.name}</a>
+                  </h4>
+                </div>
+                <p class="text-xs text-[var(--text-secondary)] line-clamp-2 mt-2 leading-relaxed h-9">
                   ${p.description}
                 </p>
               </div>

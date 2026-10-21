@@ -58,13 +58,13 @@
           alt="Aurelia Haute Joaillerie Salon"
           class="w-full h-full object-cover object-center scale-105 opacity-20 dark:opacity-10 transition-opacity duration-700 select-none filter blur-[0.5px]"
         />
-        <div class="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/85 to-[var(--bg-primary)]/40 rtl:bg-gradient-to-l"></div>
+        <div class="absolute inset-0 bg-radial from-[var(--bg-primary)]/40 via-[var(--bg-primary)]/80 to-[var(--bg-primary)]"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)]/60"></div>
-        <div class="hero-caustic-light w-[600px] h-[600px] top-1/4 right-1/4 opacity-35"></div>
+        <div class="hero-caustic-light w-[600px] h-[600px] top-1/4 left-1/2 -translate-x-1/2 opacity-25"></div>
       </div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div class="max-w-3xl space-y-6 text-left rtl:text-right" data-aos="fade-up" data-aos-duration="1000">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+        <div class="max-w-3xl mx-auto space-y-6 flex flex-col items-center" data-aos="fade-up" data-aos-duration="1000">
           <div class="inline-flex items-center gap-2 px-3 py-1 border border-[#C6A15B]/30 bg-[#C6A15B]/10 rounded-full text-[11px] uppercase tracking-[0.25em] text-[var(--color-gold)] font-medium">
             <span class="w-1.5 h-1.5 rounded-full bg-[#C6A15B] animate-ping"></span>
             Maison Aurelia • Founded 1994
@@ -75,11 +75,11 @@
             <span class="text-gold-gradient italic font-normal">Forged for Eternity.</span>
           </h1>
 
-          <p class="text-sm sm:text-base text-[var(--text-secondary)] font-light leading-relaxed max-w-2xl">
+          <p class="text-sm sm:text-base text-[var(--text-secondary)] font-light leading-relaxed max-w-2xl mx-auto">
             For three decades, Maison Aurelia has preserved the poetic intimacy of fine neckpieces. Uniting ancient Valenza goldsmithing with Swiss laser precision, we craft heirloom jewelry intended not merely to adorn, but to accompany a life of significance.
           </p>
 
-          <div class="pt-4 flex flex-wrap items-center gap-8 text-xs uppercase tracking-widest text-[var(--text-muted)] font-medium border-t border-[var(--border-subtle)] max-w-xl">
+          <div class="pt-4 flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-xs uppercase tracking-widest text-[var(--text-muted)] font-medium border-t border-[var(--border-subtle)] w-full max-w-xl mx-auto">
             <div><strong class="font-serif text-2xl font-bold text-[var(--color-gold)] block">30+</strong> Years of Craft</div>
             <div><strong class="font-serif text-2xl font-bold text-[var(--color-gold)] block">Geneva</strong> Master Vault</div>
             <div><strong class="font-serif text-2xl font-bold text-[var(--color-gold)] block">100%</strong> Certified Recycled</div>
@@ -100,14 +100,14 @@
           <div class="lg:col-span-6 relative" data-aos="fade-right">
             <div class="relative overflow-hidden border border-[var(--border-color)] shadow-2xl bg-[var(--bg-surface)]">
               <img
-                src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1100&q=80"
+                src="images/goldsmith-atelier-bench.jpg"
                 alt="Master Goldsmith Hand Polishing in Aurelia Geneva Workshop"
                 class="w-full h-[480px] object-cover object-center"
               />
-              <div class="absolute bottom-5 left-5 right-5 sm:right-auto sm:max-w-sm bg-[var(--bg-surface)]/95 backdrop-blur-md border border-[var(--border-color)] p-5 space-y-1 text-left rtl:text-right">
-                <span class="text-[10px] uppercase tracking-widest text-[var(--color-gold)] font-bold">The Valenza-Geneva Bench</span>
-                <h4 class="font-serif text-base font-bold text-[var(--text-primary)]">32 Hours of Manual Calibration</h4>
-                <p class="text-xs text-[var(--text-secondary)] leading-relaxed font-light">
+              <div class="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-sm bg-[#191816]/95 dark:bg-[#121110]/95 backdrop-blur-md border border-[var(--color-gold)]/50 p-4 sm:p-5 space-y-1 text-left rtl:text-right shadow-2xl z-10">
+                <span class="text-[10px] sm:text-[11px] uppercase tracking-widest text-[var(--color-gold)] font-bold block">The Valenza-Geneva Bench</span>
+                <h4 class="font-serif text-base sm:text-lg font-bold text-[#FAF7F0] leading-snug">32 Hours of Manual Calibration</h4>
+                <p class="text-xs sm:text-[13px] text-[#E8DFD0] leading-relaxed font-normal">
                   Every link is individually micro-welded under microscope inspection to ensure seamless skin drape with zero hair-pulling.
                 </p>
               </div>
@@ -199,7 +199,7 @@
             <div class="w-12 h-12 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)]">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             </div>
-            <h3 class="font-serif text-xl font-bold text-[var(--text-primary)]">Swiss Assay Hallmarking</h3>
+            <h3 class="font-serif text-xl font-bold text-[var(--text-primary)] whitespace-nowrap">Swiss Hallmarking</h3>
             <p class="text-xs text-[var(--text-secondary)] leading-relaxed font-light">
               Independently stamped by the Geneva Central Office for Precious Metal Control, certifying exact 750 (18K) and 925 purities.
             </p>

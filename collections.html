@@ -290,18 +290,18 @@
             </div>
 
             <!-- Save Design & Add to Cart Controls -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
               <button
                 type="button"
                 onclick="CustomStudio.saveDesign()"
-                class="py-3.5 px-4 btn-luxury-ghost text-xs font-bold uppercase tracking-wider sm:tracking-widest"
+                class="w-full py-3.5 px-4 btn-luxury-ghost text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest text-center whitespace-normal max-w-full"
               >
                 Save Design
               </button>
               <button
                 type="button"
                 onclick="CustomStudio.addToCart()"
-                class="py-3.5 px-4 btn-luxury-gold text-xs font-bold uppercase tracking-wider sm:tracking-widest"
+                class="w-full py-3.5 px-4 btn-luxury-gold text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest text-center whitespace-normal max-w-full"
               >
                 Add Custom Piece to Bag
               </button>
@@ -314,33 +314,33 @@
             
             <!-- Step 1: Base Metal -->
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">1. Select Precious Metal</span>
-                <span id="cfg-metal-val" class="text-[var(--color-gold)] font-semibold">18K Champagne Gold ($850 base)</span>
+                <span id="cfg-metal-val" class="text-[var(--color-gold)] font-semibold text-left rtl:text-right">18K Champagne Gold ($850 base)</span>
               </div>
-              <div class="grid grid-cols-2 gap-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button
                   type="button"
                   onclick="CustomStudio.setMetal('gold', 850)"
                   id="studio-metal-gold"
-                  class="p-3 border-2 border-[var(--color-gold)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-3"
+                  class="p-2.5 sm:p-3 border-2 border-[var(--color-gold)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-2.5 sm:gap-3 transition-colors min-h-[4rem]"
                 >
-                  <span class="w-4 h-4 rounded-full bg-[#C6A15B] border border-black/30"></span>
-                  <div>
-                    <div>18K Champagne Gold</div>
-                    <div class="text-[10px] text-[var(--text-muted)] font-normal">Assayed in Geneva</div>
+                  <span class="w-4 h-4 rounded-full bg-[#C6A15B] border border-black/30 shrink-0"></span>
+                  <div class="min-w-0 flex-1">
+                    <div class="truncate sm:whitespace-normal font-bold text-[11px] sm:text-xs">18K Champagne Gold</div>
+                    <div class="text-[10px] text-[var(--text-muted)] font-normal truncate">Assayed in Geneva</div>
                   </div>
                 </button>
                 <button
                   type="button"
                   onclick="CustomStudio.setMetal('silver', 420)"
                   id="studio-metal-silver"
-                  class="p-3 border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-3 hover:border-[var(--color-silver)]"
+                  class="p-2.5 sm:p-3 border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] text-left rtl:text-right text-xs font-bold flex items-center gap-2.5 sm:gap-3 hover:border-[var(--color-silver)] transition-colors min-h-[4rem]"
                 >
-                  <span class="w-4 h-4 rounded-full bg-[#C8CCD0] border border-black/30"></span>
-                  <div>
-                    <div>925 Sterling Silver</div>
-                    <div class="text-[10px] text-[var(--text-muted)] font-normal">Rhodium Dipped</div>
+                  <span class="w-4 h-4 rounded-full bg-[#C8CCD0] border border-black/30 shrink-0"></span>
+                  <div class="min-w-0 flex-1">
+                    <div class="truncate sm:whitespace-normal font-bold text-[11px] sm:text-xs">925 Sterling Silver</div>
+                    <div class="text-[10px] text-[var(--text-muted)] font-normal truncate">Rhodium Dipped</div>
                   </div>
                 </button>
               </div>
@@ -348,9 +348,9 @@
 
             <!-- Step 2: Chain Silhouette Weave -->
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">2. Chain Style Weave</span>
-                <span id="cfg-chain-val" class="text-[var(--text-muted)] font-semibold">Venetian Box (+0)</span>
+                <span id="cfg-chain-val" class="text-[var(--text-muted)] font-semibold text-left rtl:text-right">Venetian Box (+0)</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                 <button type="button" onclick="CustomStudio.setChain('box', 0, 'Venetian Box')" id="chain-opt-box" class="chain-btn p-2.5 border-2 border-[var(--color-gold)] bg-[var(--bg-secondary)] text-center font-bold">Box Link</button>
@@ -362,9 +362,9 @@
 
             <!-- Step 3: Chain Length -->
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">3. Length Proportions</span>
-                <span id="cfg-length-val" class="text-[var(--text-muted)] font-semibold">18" Princess</span>
+                <span id="cfg-length-val" class="text-[var(--text-muted)] font-semibold text-left rtl:text-right">18" Princess</span>
               </div>
               <div class="grid grid-cols-4 gap-2 text-xs font-bold">
                 <button type="button" onclick="CustomStudio.setLength('16&quot;', 0)" id="len-opt-16" class="len-btn py-2 border border-[var(--border-color)] hover:border-[var(--color-gold)]">16&quot;</button>
@@ -376,9 +376,9 @@
 
             <!-- Step 4: Pendant Talisman Design -->
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">4. Pendant Talisman</span>
-                <span id="cfg-pendant-val" class="text-[var(--text-muted)] font-semibold">Solitaire Diamond (+$400)</span>
+                <span id="cfg-pendant-val" class="text-[var(--text-muted)] font-semibold text-left rtl:text-right">Solitaire Diamond (+$400)</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                 <button type="button" onclick="CustomStudio.setPendant('solitaire', 400, 'Solitaire Diamond', 'circle')" id="pend-opt-solitaire" class="pend-btn p-2 border border-[var(--color-gold)] bg-[var(--color-gold)] text-black font-bold text-center">Solitaire (+$400)</button>
@@ -391,9 +391,9 @@
 
             <!-- Step 5: Custom Engraving & Font Selection -->
             <div class="space-y-3 pt-2 border-t border-[var(--border-subtle)]">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">5. Personalized Engraving</span>
-                <span class="text-xs text-emerald-600 font-semibold">Complimentary</span>
+                <span class="text-xs text-emerald-600 font-semibold text-left rtl:text-right">Complimentary</span>
               </div>
               <div class="flex gap-3">
                 <input
@@ -420,9 +420,9 @@
 
             <!-- Step 6: Luxury Packaging Choice -->
             <div class="space-y-3 pt-2 border-t border-[var(--border-subtle)]">
-              <div class="flex items-center justify-between text-xs">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
                 <span class="font-bold uppercase tracking-wider text-[var(--text-primary)]">6. Luxury Presentation</span>
-                <span id="cfg-package-val" class="text-[var(--text-muted)] font-semibold">Velvet Monogram Box</span>
+                <span id="cfg-package-val" class="text-[var(--text-muted)] font-semibold text-left rtl:text-right">Velvet Monogram Box</span>
               </div>
               <div class="grid grid-cols-3 gap-2 text-xs">
                 <button type="button" onclick="CustomStudio.setPackaging('velvet', 0, 'Velvet Box')" id="pkg-velvet" class="pkg-btn p-2 border border-[var(--color-gold)] bg-[var(--bg-secondary)] text-center font-bold">Velvet Box</button>
@@ -456,42 +456,50 @@
         </div>
 
         <!-- 4 Milestone Gift Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 items-stretch">
           
-          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-4" data-aos="fade-up">
-            <div class="w-10 h-10 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)] font-serif font-bold text-lg">01</div>
-            <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">Anniversaries</h4>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] flex flex-col" data-aos="fade-up">
+            <div class="w-10 h-10 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)] font-serif font-bold text-lg mb-4">01</div>
+            <h4 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.25rem] flex items-start">Anniversaries</h4>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-6 flex-1">
               Commemorate enduring devotion with our dual-tone Clarisse interlocking links or a custom-engraved anniversary Roman medallion.
             </p>
-            <a href="shop.html?style=pendant" class="inline-block text-xs uppercase tracking-wider text-[var(--color-gold)] font-bold hover:underline">Explore Anniversary Gifts →</a>
+            <div class="mt-auto pt-2">
+              <a href="shop.html?style=pendant" class="inline-block text-[11px] xl:text-xs uppercase tracking-wider text-[var(--color-gold)] font-bold hover:underline whitespace-nowrap">Anniversary →</a>
+            </div>
           </div>
 
-          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-10 h-10 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)] font-serif font-bold text-lg">02</div>
-            <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">Milestone Birthdays</h4>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-10 h-10 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)] font-serif font-bold text-lg mb-4">02</div>
+            <h4 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.25rem] flex items-start">Milestone Birthdays</h4>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-6 flex-1">
               Celebrate thirty, forty, or fifty with a radiant round brilliant solitaire diamond necklace in solid 18K Champagne Gold.
             </p>
-            <a href="shop.html?metal=gold" class="inline-block text-xs uppercase tracking-wider text-[var(--color-gold)] font-bold hover:underline">Explore Birthday Gifts →</a>
+            <div class="mt-auto pt-2">
+              <a href="shop.html?metal=gold" class="inline-block text-[11px] xl:text-xs uppercase tracking-wider text-[var(--color-gold)] font-bold hover:underline whitespace-nowrap">Birthdays →</a>
+            </div>
           </div>
 
-          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-10 h-10 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)] font-serif font-bold text-lg">03</div>
-            <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">Bridal & Weddings</h4>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] flex flex-col" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-10 h-10 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)] font-serif font-bold text-lg mb-4">03</div>
+            <h4 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.25rem] flex items-start">Bridal & Weddings</h4>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-6 flex-1">
               Lustrous Australian baroque pearls and sculptural sterling silver chokers that accentuate bridal necklines and silks.
             </p>
-            <a href="shop.html?metal=silver" class="inline-block text-xs uppercase tracking-wider text-[var(--color-silver)] font-bold hover:underline">Explore Bridal Gifts →</a>
+            <div class="mt-auto pt-2">
+              <a href="shop.html?metal=silver" class="inline-block text-[11px] xl:text-xs uppercase tracking-wider text-[var(--color-silver)] font-bold hover:underline whitespace-nowrap">Bridal →</a>
+            </div>
           </div>
 
-          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] space-y-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="w-10 h-10 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)] font-serif font-bold text-lg">04</div>
-            <h4 class="font-serif text-xl font-bold text-[var(--text-primary)]">Self-Purchasing Splendor</h4>
-            <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+          <div class="p-6 bg-[var(--bg-secondary)] border border-[var(--border-color)] flex flex-col" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-10 h-10 rounded-full bg-[var(--color-gold)]/15 flex items-center justify-center text-[var(--color-gold)] font-serif font-bold text-lg mb-4">04</div>
+            <h4 class="font-serif text-xl font-bold text-[var(--text-primary)] min-h-[3.25rem] flex items-start whitespace-nowrap">Self-Rewards</h4>
+            <p class="text-xs text-[var(--text-secondary)] leading-relaxed mb-6 flex-1">
               Reward your own hard-won achievements. Our Valère heavy gold chain provides an unapologetic statement of sovereignty.
             </p>
-            <a href="shop.html" class="inline-block text-xs uppercase tracking-wider text-[var(--color-gold)] font-bold hover:underline">Explore Statement Chains →</a>
+            <div class="mt-auto pt-2">
+              <a href="shop.html" class="inline-block text-[11px] xl:text-xs uppercase tracking-wider text-[var(--color-gold)] font-bold hover:underline whitespace-nowrap">Statement Chains →</a>
+            </div>
           </div>
 
         </div>

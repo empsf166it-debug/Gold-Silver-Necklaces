@@ -145,9 +145,9 @@ const AureliaApp = {
                 </a>
               </div>
 
-              <!-- Theme Toggle Button -->
-              <button id="header-theme-btn" onclick="AureliaApp.toggleTheme()" aria-label="Toggle Light/Dark Theme" class="header-icon-btn p-2 hover:text-[var(--color-gold)] transition-colors">
-                <span class="theme-toggle-icon"></span>
+              <!-- Theme Toggle Button with Highlighted Shape Badge -->
+              <button id="header-theme-btn" onclick="AureliaApp.toggleTheme()" aria-label="Toggle Light/Dark Theme" class="header-icon-btn hover:text-[var(--color-gold)] transition-all">
+                <span class="theme-toggle-icon flex items-center justify-center"></span>
               </button>
 
               <!-- Hamburger Menu Icon (Tablet & Mobile: visible up to lg breakpoint) -->
@@ -210,13 +210,13 @@ const AureliaApp = {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-[var(--border-subtle)]">
             <!-- Brand Column -->
             <div class="lg:col-span-2 space-y-5">
-              <div class="flex items-center gap-2">
-                <svg class="w-6 h-6 text-[var(--color-gold)]" viewBox="0 0 24 24" fill="currentColor">
+              <a href="index.html" class="inline-flex items-center gap-2 group cursor-pointer" aria-label="AURELIA Home">
+                <svg class="w-6 h-6 text-[var(--color-gold)] transition-transform duration-500 group-hover:rotate-45 shrink-0" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="12,2 22,12 12,22 2,12" stroke="currentColor" stroke-width="1.2" fill="none"/>
                   <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
                 </svg>
-                <span class="font-serif text-3xl tracking-[0.2em] font-bold text-[var(--text-primary)]">AURELIA</span>
-              </div>
+                <span class="font-serif text-3xl tracking-[0.2em] font-bold text-[var(--text-primary)] group-hover:text-[var(--color-gold)] transition-colors">AURELIA</span>
+              </a>
               <p class="text-sm font-light leading-relaxed max-w-sm text-[var(--text-secondary)]">
                 Purveyors of master-crafted 18K solid gold and 925 sterling silver necklaces. Forged with architectural integrity and eternal radiance at our Geneva ateliers since 1994.
               </p>
@@ -283,7 +283,7 @@ const AureliaApp = {
 
           <!-- Bottom Footer Details -->
           <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-[var(--text-muted)] gap-4">
-            <div class="flex items-center space-x-6 rtl:space-x-reverse">
+            <div class="flex flex-wrap items-center gap-3 sm:gap-6 rtl:space-x-reverse justify-center md:justify-start">
               <span>© ${new Date().getFullYear()} AURELIA HAUTE JOAILLERIE. All Rights Reserved.</span>
               <span class="hidden md:inline">•</span>
               <span class="hidden md:inline">Hallmarked & Assayed in Geneva</span>
@@ -444,31 +444,31 @@ const AureliaApp = {
 
         <!-- Quick Action Icons Strip (Search, Wishlist, Bag, Account) -->
         <div class="px-6 py-4 border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)] flex items-center justify-between text-[var(--text-primary)]">
-          <button id="header-search-btn" onclick="AureliaApp.closeMobileMenu(); AureliaApp.openSearch()" aria-label="Search Fine Necklaces" class="p-2 hover:text-[var(--color-gold)] transition-colors flex flex-col items-center gap-1">
+          <button id="mobile-search-btn" onclick="AureliaApp.closeMobileMenu(); AureliaApp.openSearch()" aria-label="Search Fine Necklaces" class="p-2 hover:text-[var(--color-gold)] transition-colors flex flex-col items-center gap-1">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             <span class="text-[10px] uppercase tracking-wider font-semibold">Search</span>
           </button>
 
-          <button id="header-wishlist-btn" onclick="AureliaApp.closeMobileMenu(); AureliaApp.openWishlist()" aria-label="View Wishlist" class="p-2 hover:text-[var(--color-gold)] transition-colors flex flex-col items-center gap-1 relative">
+          <button id="mobile-wishlist-btn" onclick="AureliaApp.closeMobileMenu(); AureliaApp.openWishlist()" aria-label="View Wishlist" class="p-2 hover:text-[var(--color-gold)] transition-colors flex flex-col items-center gap-1 relative">
             <div class="relative">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-              <span id="wishlist-badge" class="wishlist-badge-count absolute -top-1.5 -right-2 bg-[var(--color-gold)] text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+              <span class="wishlist-badge-count absolute -top-1.5 -right-2 bg-[var(--color-gold)] text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
             </div>
             <span class="text-[10px] uppercase tracking-wider font-semibold">Wishlist</span>
           </button>
 
-          <button id="header-cart-btn" onclick="AureliaApp.closeMobileMenu(); AureliaApp.openCart()" aria-label="View Shopping Cart" class="p-2 hover:text-[var(--color-gold)] transition-colors flex flex-col items-center gap-1 relative">
+          <button id="mobile-cart-btn" onclick="AureliaApp.closeMobileMenu(); AureliaApp.openCart()" aria-label="View Shopping Cart" class="p-2 hover:text-[var(--color-gold)] transition-colors flex flex-col items-center gap-1 relative">
             <div class="relative">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-              <span id="cart-badge" class="cart-badge-count absolute -top-1.5 -right-2 bg-[var(--color-gold)] text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+              <span class="cart-badge-count absolute -top-1.5 -right-2 bg-[var(--color-gold)] text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
             </div>
             <span class="text-[10px] uppercase tracking-wider font-semibold">Bag</span>
           </button>
 
-          <a href="login.html" id="header-account-btn" aria-label="Customer or Admin Account" class="p-2 hover:text-[var(--color-gold)] transition-colors flex flex-col items-center gap-1 relative">
+          <a href="login.html" id="mobile-account-btn" aria-label="Customer or Admin Account" class="p-2 hover:text-[var(--color-gold)] transition-colors flex flex-col items-center gap-1 relative">
             <div class="relative">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-              <span id="auth-status-indicator" class="auth-status-indicator hidden absolute top-0 right-0 w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="auth-status-indicator hidden absolute top-0 right-0 w-2 h-2 rounded-full bg-emerald-500"></span>
             </div>
             <span class="text-[10px] uppercase tracking-wider font-semibold">Account</span>
           </a>
@@ -854,12 +854,18 @@ const AureliaApp = {
      MOBILE MENU
   ------------------------------------------------------------- */
   openMobileMenu() {
-    this.closeAllDrawers();
+    this.closeSearch();
+    this.closeCart();
+    this.closeWishlist();
+    this.closeQuickView();
+    this.closeCheckoutModal();
+
     const drawer = document.getElementById("mobile-menu-drawer");
     const backdrop = document.getElementById("drawer-backdrop");
     if (drawer && backdrop) {
       backdrop.classList.remove("opacity-0", "pointer-events-none");
       drawer.classList.remove("translate-x-full");
+      drawer.classList.add("open");
     }
   },
 
@@ -869,6 +875,7 @@ const AureliaApp = {
     if (drawer && backdrop) {
       backdrop.classList.add("opacity-0", "pointer-events-none");
       drawer.classList.add("translate-x-full");
+      drawer.classList.remove("open");
     }
   },
 
